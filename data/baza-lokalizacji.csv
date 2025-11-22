@@ -1,0 +1,127 @@
+LP,Nazwa,Kategoria,Lokalizacja,GPS,Vibe,Czas,Opis,Sezon/Godziny
+1,Afrykarium Wrocław,Nauka,Wrocław,"51.120, 17.055",#egzotyczne #podwodne,2-3h,Największe europejskie akwarium,Cały rok; 9:00-19:00
+2,Arboretum Jarków,Natura/Relaks,Jarków,"50.4012, 16.2650",#orientalne #edukacyjne,1h,Prywatny Ogród Japoński,Sezonowo; 10:00-16:00
+3,Arboretum Leśne,Natura,Stradomia,"51.2664, 17.6772",#przyroda #aktywne,2-3h,Arboretum 650 ha,Cały rok; 8:00-18:00
+4,Arboretum Wojsławice,Natura,Wojsławice,"50.7128, 16.8563",#botaniczne #fotogeniczne,3-4h,Ogród z 900 rododendronami,13.04-19.10; 9:00-17:00
+5,Arboretum Lipnie,Natura/Relaks,Lipno,"50.6167, 17.6042",#historyczne #botaniczne,1-2h,Najstarsze arboretum (1783),Cały rok; 9:00-17:00
+6,Arboretum Lądek,Natura,Lądek-Zdrój,"50.3367, 16.8939",#zielone #relaks,1-2h,Ogród 300 gatunków,Sezonowo; 9:00-17:00
+7,Bramy Morawskie,Natura,Witkowice,"50.850, 15.545",#edukacyjny,2-3h,Arboretum europejskie,Maj-wrzesień; 9:00-17:00
+8,Chata Szwajcarki,Przygoda,Mysłakowice,"50.850, 15.550",#górskie #gastronomia,1-1.5h,Tradycyjna gospoda,Cały rok; 9:00-18:00
+9,Dolina Baryczy,Natura,Dolina Baryczy,"51.4250, 16.7750",#ptaki #edukacyjne,2-4h,Park wodno-błotny,Cały rok; dostęp 24/7
+10,Dolina Pięciu Stawów,Przygoda,Szklarska,"50.846, 15.539",#górskie #jeziorka,3-4h,Szlak z 5 jeziorkami,Czerwiec-wrzesień
+11,Dom Hauptmanna,Historia,Szklarska,"50.846, 15.539",#artystyczne #muzeum,1-1.5h,Dom Premio Nobla,Maj-wrzesień; 10:00-16:00
+12,Droga Zieleńca,Punkt widokowy,Duszniki,"50.4080, 16.5180",#przyroda #panorama,1h,Taras widokowy,Maj-wrzesień; dostęp 24/7
+13,Grota Niedźwiedzia,Przygoda,Kłodzko,"50.387, 16.736",#podziemna #paleolitu,1-1.5h,Jaskinia z formacjami,Maj-wrzesień; 10:00-16:00
+14,Góra Czarna,Przygoda,Harrachów,"50.798, 15.604",#górskie #szlaki,1-1.5h,Szczyt turystyczny,Cały rok
+15,Góra Szybowcowa,Punkt widokowy,Jeżów,"50.9660, 15.7440",#widokowe #rodzinne,1-2h,Wieża widokowa,Cały rok; dostęp 24/7
+16,Góra Trzy Korony,Przygoda,Karpacz,"50.783, 15.770",#górskie #widokowe,1.5-2h,Szczyt z widokami,Cały rok; dostęp 24/7
+17,Góra Ślęża,Przygoda,Sobótka,"50.857, 16.702",#aktywne #panoramiczne,2-3h,Święta góra Słowian,Cały rok; dostęp 24/7
+18,Górki Gorące,Relaks,Gorzyce,"50.960, 16.200",#termalne #spa,2-3h,Termalny basen,Cały rok; 8:00-22:00
+19,Hala Stulecia,Architektura,Wrocław,"51.112, 17.069",#architektura #modernistyczne,1.5-2h,Zabytek UNESCO,Cały rok; 10:00-18:00
+20,Hydropolis,Nauka,Wrocław,"51.1079, 17.0385",#edukacyjny #interaktywny,2-3h,Centrum nauki o wodzie,Cały rok; 9:00-18:00
+21,Jezioro Nyskie,Przygoda,Nysa,"50.459, 16.612",#wodne #kąpiel,2-3h,Jezioro do kąpieli,Maj-wrzesień; dostęp 24/7
+22,Karpacz,Przygoda,Karpacz,"50.800, 15.778",#górskie #turystyka,1-2 dni,Ośrodek turystyczny,Cały rok
+23,Kościół Gracja,Historia,Wałbrzych,"50.775, 16.285",#sakralny #gotycki,0.5-1h,Gotycki kościół XV w.,Cały rok; 9:00-17:00
+24,Kościół Pokoju,Historia,Świdnica,"50.8641, 16.4921",#sakralny #edukacyjny,1-1.5h,Zabytek UNESCO XVII w.,Cały rok; 9:00-17:00
+25,Kolorowe Jeziorka,Natura,Wieściszowice,"50.8294, 15.9737",#przyroda #geologia,2-3h,Cztery stawy kolorowe,Cały rok; 6:00-18:00
+26,Kopalnia Złota,Nauka,Złoty Stok,"50.401, 16.733",#przygoda #podziemna,1.5-2h,Jedyna kopalnia złota,Cały rok; 10:00-16:00
+27,Kolejkowo,Nauka,Wrocław,"51.105, 17.088",#interaktywny #edukacyjny,2-3h,Kolejka miniaturowa,Cały rok; 10:00-18:00
+28,Młyn Hilberta,Historia,Dzierżoniów,"50.593, 16.443",#tradycja #rzemiosło,1-1.5h,Historyczny młyn,Maj-wrzesień; 10:00-16:00
+29,Muzeum Karkonoskie,Historia,Jelenia Góra,"50.9015, 15.7481",#regionalne #kultura,1-2h,Muzeum Karkonoszy,Cały rok; 10:00-17:00
+30,Muzeum Miedzi,Historia,Legnica,"51.2089, 16.1592",#kultura #technika,2h,Muzeum miedzi,Wtorek-niedziela; 9:00-17:00
+31,Muzeum Motoryzacji,Historia,Świdnica,"50.8310, 16.4905",#klasyczne #edukacyjne,1-2h,Kolekcja aut,Cały rok; 10:00-17:00
+32,Muzeum Motoryzacji 2,Historia,Ślęza,"51.0250, 17.0700",#klasyki #technika,1-2h,Samochody w zamku,Cały rok; 10:00-17:00
+33,Muzeum Narodowe,Nauka,Wrocław,"51.1117, 17.0428",#artystyczne #wystawy,2-3h,Sztuka średniowieczna,Cały rok; 10:00-17:00
+34,Muzeum Papiernictwa,Historia,Duszniki,"50.4044, 16.3955",#edukacja #kulturowe,1-2h,Muzeum w młynie,Cały rok; 9:00-17:00
+35,Muzeum Śląskie,Nauka,Wrocław,"51.108, 17.050",#artystyczne #edukacyjny,2-3h,Największe muzeum,Cały rok; 10:00-18:00
+36,Ogród Botaniczny,Natura,Wrocław,"51.120, 17.063",#spokojne #edukacyjny,2-3h,Ogród 10000 gatunkami,Cały rok; 9:00-17:00
+37,Ogród Japoński Przesieka,Natura,Przesieka,"50.8020, 15.6793",#kulturowe #rodzinne,2-3h,Ogród japońsko-górski,Cały rok; 9:00-18:00
+38,Ogród Japoński Szczytnicki,Natura,Wrocław,"51.1103, 17.0795",#orientalne #relaks,1-2h,Japonia w Wrocławiu,Cały rok; 9:00-17:00
+39,Ogród Japoński II,Natura,Wrocław,"51.117, 17.067",#zen #kontemplacyjne,1-1.5h,Miniaturowa Japonia,Cały rok; 9:00-17:00
+40,Ostrzyca Kłodzka,Przygoda,Kłodzko,"50.406, 16.648",#górskie #widokowe,2-3h,Szczyt z panoramą,Cały rok; dostęp 24/7
+41,Pałac Kamieniec,Historia,Kamieniec,"50.5208, 16.8809",#neogotyckie #fotogeniczne,2-3h,Neogotycki pałac XIX w.,Maj-wrzesień; 11:00-17:00
+42,Pałac Łomnicy,Historia,Łomnicy,"50.885, 15.788",#pałacowy #artystyczne,1.5-2h,Bajkowy pałac,Maj-wrzesień; 11:00-17:00
+43,Pałac Paulinum,Historia,Wrocław,"51.1100, 17.0700",#religia #historia,0.5-1h,Neogotycki pałac,Poniedziałek-piątek; 9:00-16:00
+44,Pałac Staniszów,Historia,Staniszów,"50.8950, 15.6910",#barokowe #fotogeniczne,1-2h,Pałac barokowy,Maj-wrzesień; 11:00-17:00
+45,Pałac Bukowiec,Historia,Bukowiec,"50.8640, 15.7360",#eklektyczne #historyczne,1-2h,Eklektyczny pałac,Maj-wrzesień; 10:00-17:00
+46,Pałac Międzylesie,Historia,Międzylesie,"50.2870, 16.7030",#historyczne #zabytek,1-2h,Kompleks parkowy,Maj-wrzesień; 10:00-16:00
+47,Pałac Krobielowice,Historia,Krobielowice,"51.1180, 16.1210",#hotele #romantyczne,1-2h,Pałac hotelowy,Cały rok; 9:00-18:00
+48,Pałac Wojanów,Historia,Wojanów,"50.8144, 15.7982",#romantyczne #relaks,2h,Stylowy hotel,Cały rok; 9:00-18:00
+49,Palmiarnia,Natura,Wałbrzych,"50.8296, 16.3065",#egzotyczne #relaks,1-2h,Zabytkowa palmiarnia,Cały rok; 10:00-16:00
+50,Park Postolin,Natura,Postolin,"51.4764, 17.2369",#historyczne #spacer,1-2h,Romantyczny park XIX w.,Cały rok; dostęp 24/7
+51,Park Południowy,Natura,Wrocław,"51.1012, 17.0799",#miejski #relaks,1-2h,Park z stawem,Cały rok; dostęp 24/7
+52,Park Szczytnicki,Natura,Wrocław,"51.1046, 17.0953",#kulturowe #architektura,2-3h,Kompleks parkowo-urbanistyczny,Cały rok; 9:00-18:00
+53,Park Zdrojowy,Natura,Jelenia Góra,"50.9070, 15.7440",#relaks #romantyczne,1-2h,Park XIX w.,Cały rok; dostęp 24/7
+54,Park Mazeł,Natura,Jawor,"51.640, 15.605",#labirynt #rodzinny,1-1.5h,Labirynt mais,Lipiec-sierpień; 10:00-18:00
+55,Park Miniatur,Rozrywka,Kowary,"50.7986, 15.8342",#rodzinne #edukacyjne,1-2h,Park miniatur 1:25,Sezonowo; 10:00-17:00
+56,Park Podzamcze,Przygoda,Bolków,"50.920, 16.098",#rodzinny #aktywny,2-3h,Park przygód,Wiosna-jesień; 10:00-17:00
+57,Polanica-Zdrój,Relaks,Polanica,"50.046, 16.755",#uzdrowisko #spa,1-2 dni,Uzdrowisko mineralne,Cały rok
+58,Przełęcz Karkonoska,Przygoda,Karpacz,"50.775, 15.755",#górskie #graniczne,2-3h,Przełęcz granicy,Cały rok
+59,Przesieka,Natura,Przesieka,"50.790, 15.714",#górskie #rodzinne,1-2 dni,Wioska górska,Cały rok; dostęp 24/7
+60,Rezerwat Bory,Natura,Żary,"51.640, 15.135",#lasy #przyroda,2-3h,Rezerwat leśny,Cały rok; dostęp 24/7
+61,Rezerwat Śnieżnik,Natura,Świeradów,"50.840, 15.780",#naukowy #egzotyczne,1-2h,Rezerwat roślinny,Czerwiec-sierpień; dostęp 24/7
+62,Rezerwat Torfowiska,Natura,Szczeliniec,"50.360, 16.912",#torfowiska #rzadkie,1-1.5h,Rezerwat torfowiskowy,Maj-wrzesień; dostęp 24/7
+63,Schronisko Trzy Studnie,Przygoda,Szklarska,"50.846, 15.539",#górskie #tradycyjne,1-1.5h,Schronisko na szlaku,Cały rok; 8:00-20:00
+64,Skała Trójcy,Historia,Wałbrzych,"50.771, 16.285",#sakralny #historyczne,1-1.5h,Kościół na szczycie,Cały rok; 8:00-18:00
+65,Sky Tower,Architektura,Wrocław,"51.1040, 17.0410",#panorama #miejskie,1h,Taras na 49 piętrze,Cały rok; 10:00-18:00
+66,Sky Walk,Przygoda,Świeradów,"50.860, 15.415",#adrenalina #wysokościowe,1-2h,Wieża widokowa 34m,Cały rok; 10:00-18:00
+67,Skalki Tłumaczów,Przygoda,Tłumaczów,"50.844, 15.585",#skały #wspinaczka,1-2h,Formacje skalne,Cały rok; dostęp 24/7
+68,Stara Kopalnia,Historia,Wałbrzych,"50.7725, 16.2614",#industrialne #edukacja,2-3h,Centrum Nauki,Cały rok; 10:00-17:00
+69,Sudecka Zagroda,Nauka,Dobków,"50.950, 16.050",#edukacyjny #tradycja,1.5-2h,Tradycyjna zagroda,Cały rok; 10:00-17:00
+70,Świeradów-Zdrój,Relaks,Świeradów,"50.860, 15.415",#spa #mineralne,1-2 dni,Uzdrowisko XIII w.,Cały rok
+71,Szklarska Poręba,Przygoda,Szklarska,"50.846, 15.539",#górskie #turystyka,1-2 dni,Miasteczko górskie,Cały rok
+72,Szlak Błędne Skały,Przygoda,Ostrów,"50.843, 15.612",#aktywne #skałkowe,2-3h,Szlak formacje,Cały rok; dostęp 24/7
+73,Szlak Karkonoskie,Przygoda,Karpacz,"50.800, 15.778",#górskie #romantyczne,4-6h,Główny szlak,Cały rok (zima trudności)
+74,Szlak rowerowy Izerski,Przygoda,Góry Izerskie,"50.850, 15.450",#rowerowy #aktywny,3-4h,Trasa rowerowa,Maj-wrzesień; dostęp 24/7
+75,Szlak rowerowy Stołowe,Przygoda,Góry Stołowe,"50.380, 16.900",#rowerowy #aktywny,3-4h,Trasa przez góry,Cały rok
+76,Szlak Trzech Miast,Historia,Legnica-Żary,"51.190, 15.570",#historyczne #pieszo,3 dni,Szlak pielgrzymkowy,Cały rok
+77,Szlak Via Sacra,Historia,Świdnica,"50.864, 16.492",#pielgrzymki #sakralny,1-2h,Szlak pielgrzymkowy,Cały rok; dostęp 24/7
+78,Szlak Widoków,Przygoda,Mysłakowice,"50.850, 15.550",#widokowy #aktywne,2-3h,Szlak panoramiczny,Cały rok; dostęp 24/7
+79,Szlak Zamków Pałaców,Historia,Cały region,"50.5, 16.5",#edukacyjny #historyczne,Cały dzień,30+ zamków pałaców,Cały rok
+80,Śnieżka,Przygoda,Karpacz,"50.735, 15.741",#ekstremalne #najwyższy,4-5h,Szczyt Sudetów 2499m,Cały rok (zima niebezpieczna)
+81,Tatraniec,Przygoda,Karpacz,"50.800, 15.778",#górskie #romantyczne,2-3h,Schronisko turystyczne,Maj-wrzesień; 8:00-18:00
+82,Twierdza Kędzierzyn,Historia,Kędzierzyn,"50.523, 16.554",#militarny #podziemia,1.5-2h,Forteca górska,Lipiec-sierpień; 10:00-16:00
+83,Twierdza Kłodzko,Historia,Kłodzko,"50.434, 16.652",#militarny #ekspedycja,2-3h,Forteca z tunelami,Maj-wrzesień; 9:00-17:00
+84,Twierdza Srebrna Góra,Historia,Srebrna Góra,"50.5300, 16.4260",#historia #militaria,2-3h,Największa twierdza Europy,Maj-wrzesień; 10:00-17:00
+85,Winnica Adoria,Natura,Zachowice,"50.7120, 17.2920",#winnice #smaki,2-3h,Producent wina,Maj-wrzesień; 10:00-18:00
+86,Winnica Jaworek,Natura,Strzelce,"51.0420, 17.1870",#wino #relaks,2h,Nowoczesna winnica,Maj-sierpień; 10:00-18:00
+87,Winnica Moderna,Natura,Pokój,"50.8320, 17.2820",#tradycja #degustacja,2-3h,Winnica przy pałacu,Maj-sierpień; 10:00-17:00
+88,Winnica Raszów,Natura,Raszów,"50.8010, 15.7090",#górskie #wino,1-2h,Alpejska winnica,Maj-wrzesień; 10:00-17:00
+89,Winnica Wilkanów,Natura,Wilkanów,"50.5540, 16.5130",#rodzinne #degustacja,2h,Przydomowa winnica,Lipiec-wrzesień; 14:00-18:00
+90,Winnice Trzebnice,Natura,Trzebnica,"51.3270, 17.0630",#winne #krajobraz,2-3h,Trasa winiarska,Maj-wrzesień; 10:00-17:00
+91,Wieża Iglica,Punkt widokowy,Mysłakowice,"50.8480, 15.7640",#historyczne #fotogeniczne,1h,Neogotycka wieżyczka,Maj-wrzesień; dostęp 24/7
+92,Wieża Kłodzka,Punkt widokowy,Kłodzka Góra,"50.2930, 16.6550",#fotogeniczne #panorama,1h,Wieża widokowa,Cały rok; dostęp 24/7
+93,Wieża Ratuszowa,Historia,Świdnica,"50.8463, 16.4916",#historyczne #panorama,1h,Gotycka wieża,Maj-wrzesień; 10:00-16:00
+94,Wieża Sokolik,Punkt widokowy,Rudawy,"50.8325, 15.9130",#górska #fotogeniczne,1h,Skalna wieża,Maj-wrzesień; dostęp 24/7
+95,Wieża Siedlęcin,Historia,Siedlęcin,"50.9350, 15.6856",#historia #średniowiecze,1-2h,Gotycka wieża,Maj-październik: 9:00-18:00
+96,Wyciąg narciarski,Przygoda,Szklarska,"50.846, 15.539",#zimowe #aktywne,2-3h,Stacja narciarska,Grudzień-luty; 9:00-16:00
+97,Zamek Bolczów,Historia,Staniszów,"50.9100, 15.7080",#aktywne #szlaki,2-3h,Ruiny zamku,Cały rok; dostęp 24/7
+98,Zamek Bolków,Historia,Bolków,"50.8792, 16.0980",#historyczne #festival,1-2h,Masywny zamek XI w.,Maj-wrzesień; 10:00-17:00
+99,Zamek Czocha,Historia,Leśna,"51.003, 15.304",#tajemniczy #edukacyjny,3-4h,Zamek na wodzie,Cały rok; 10:00-18:00
+100,Zamek Chojnik,Historia,Mysłakowice,"50.833950, 15.644250",#romantyczne #legendarne,2-3h,Ruiny na szczycie,Cały rok; 9:00-18:00
+101,Zamek Grodziec,Historia,Grodziec,"51.0670, 15.7205",#historia #aktywne,2-3h,Zamek na wulkanie,Cały rok; 10:00-17:00
+102,Zamek Grodziec 2,Historia,Zgorzelec,"50.958, 14.778",#romantyczne #pogranicze,2-3h,Ruiny zamku,Cały rok; dostęp 24/7
+103,Zamek Grodno,Historia,Żagań,"51.656, 15.297",#renesansowe #parki,1.5-2h,Barokowy zamek XVI w.,Maj-wrzesień; 10:00-16:00
+104,Zamek Grodno 2,Historia,Zagórze,"50.8322, 16.3658",#legendy #romantyczne,2-3h,Ruinowany zamek,Maj-wrzesień; 10:00-17:00
+105,Zamek Karpniki,Historia,Mysłakowice,"50.8255, 15.7358",#romantyczne #relaks,1-2h,Neoromański zamek,Maj-wrzesień; 10:00-17:00
+106,Zamek Kliczków,Historia,Osiecznica,"51.1690, 15.5760",#historyczne #zwiedzanie,2-3h,Zamek wodny,Cały rok; 10:00-17:00
+107,Zamek Książ,Historia,Wałbrzych,"50.7606, 16.2883",#romantyczne #historia,3-4h,Monumentalny zamek,Cały rok; 9:00-17:00
+108,Zamek Książąt Głogów,Historia,Głogów,"51.666, 15.083",#gotycki #muzea,1.5-2h,Zamek VIII w.,Cały rok; 10:00-16:00
+109,Zamek Książąt Jawor,Historia,Jawor,"51.641, 15.605",#gotycki #szlaki,1.5-2h,Ruiny XV w.,Cały rok; dostęp 24/7
+110,Zamek Topacz,Historia,Ślęza,"51.0246, 17.0725",#relaks #muzeum,1-2h,Zamek z Muzeum,Cały rok; 9:00-17:00
+111,Zamek Wleń,Historia,Wleń,"51.365, 15.650",#średniowieczne #szlaki,1-1.5h,Ruiny nad Bobrem,Cały rok; dostęp 24/7
+112,Zamek Żagania,Historia,Żagań,"51.656, 15.297",#barokowy #artystyczne,1-1.5h,Pałac rezydencja,Wtorek-niedziela; 9:00-17:00
+113,Zoo Wrocław,Natura,Wrocław,"51.122, 17.055",#zwierzęta #rodzinny,Cały dzień,Jedno z najstarszych zoo,Cały rok; 8:00-18:00
+114,Szklarka Poręba Wodospad,Przygoda,Szklarska,"50.846, 15.539",#wodospad #fotogeniczne,1-1.5h,Najpiękniejszy wodospad,Cały rok; dostęp 24/7
+115,Leśny Park Skalisko,Przygoda,Jelenia Góra,"50.860, 15.530",#aktywne #rodzinny,2-3h,Park linowy,Wiosna-jesień; 10:00-17:00
+116,Jaskinia Radochowska,Przygoda,Radochów,"50.310, 16.945",#podziemna #speleologia,1-1.5h,Jaskinia ze stawem,Lipiec-sierpień; 10:00-16:00
+117,Muzeum Tycia,Historia,Kłodzko,"50.434, 16.650",#artystyczne #kultura,1.5-2h,Muzeum w pałacu,Wtorek-niedziela; 10:00-16:00
+118,Pejzażowy Szlak,Przygoda,Karpacz,"50.783, 15.770",#fotograficzne #widokowy,1-2h,Szlak turystyczny,Cały rok
+119,Arboretum Stradomia,Natura,Stradomia Dolna,"50.780, 15.750",#ogród botaniczny,2-3h,Arboretum leśne,Cały rok; 8:00-18:00
+120,Park Miejski Legnica,Relaks,Legnica,"51.2010, 16.1610",#historyczne #spacer,1-2h,Park XIX w.,Cały rok; dostęp 24/7
+121,Park Jana III Sobieskiego,Natura,Wałbrzych,"50.7880, 16.2900",#spacer #fotogeniczne,1-2h,Park z pałacem,Cały rok; 9:00-17:00
+122,Kamieniec Ząbkowicki,Historia,Pielgrzymów,"50.334, 16.570",#artystyczne #parki,1.5-2h,Pałac z ogrodami,Maj-wrzesień; 11:00-17:00
+123,Pałac Wojanów Ogród,Natura,Wojanów,"50.8139, 15.7985",#relaks #przyroda,1-2h,Kompleks pałacowy,Maj-wrzesień; 10:00-17:00
+124,Ogród Botaniczny UWr,Natura,Wrocław,"51.1157, 17.0455",#relaks #edukacja,2-3h,Zabytkowy ogród,Cały rok; 9:00-17:00
+125,Szczelinek Wielki,Przygoda,Polska Cerekwica,"50.360, 16.912",#ekstremalne #widokowe,1.5-2h,Szczyt Gór Stołowych,Cały rok; dostęp 24/7
+126,Szklarska Poręba Szlak,Przygoda,Szklarska,"50.846, 15.539",#górskie #turystyka,1-1.5h,Leśna dolinowa,Cały rok; dostęp 24/7
