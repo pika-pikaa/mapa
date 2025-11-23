@@ -1530,8 +1530,8 @@ with tab1:
 
     st.caption(f"Wyświetlono {len(filtered_places)} miejsc")
 
-    # Lista w 2 kolumnach
-    col_left, col_right = st.columns(2)
+    # Lista w 4 kolumnach
+    cols = st.columns(4)
 
     for i, place in enumerate(filtered_places):
         dist = haversine_distance(HOME_LOCATION['latitude'], HOME_LOCATION['longitude'],
@@ -1539,8 +1539,8 @@ with tab1:
 
         expander_label = f"{place['name']} {'(odwiedzone)' if place['is_visited'] else ''}"
 
-        # Naprzemiennie lewa/prawa kolumna
-        with (col_left if i % 2 == 0 else col_right):
+        # Rozłożenie na 4 kolumny
+        with cols[i % 4]:
             with st.expander(expander_label, expanded=False):
                 st.markdown(f"**{place['category']}** · {place['location']} · {dist:.1f} km")
                 st.markdown(place['description'])
