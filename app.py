@@ -980,6 +980,7 @@ def get_database():
     db.import_lubuskie_from_csv()  # Import Lubuskie
     db.import_opolskie_from_csv()  # Import Opolskie
     db.import_slaskie_from_csv()  # Import Śląskie
+    db.import_lodzkie_from_csv()  # Import Łódzkie
     db.import_galleries_from_csv()  # Import galerii handlowych
     return db
 
@@ -1589,7 +1590,7 @@ with tab2:
         # Wybór województwa
         selected_region = st.selectbox(
             "Województwo",
-            options=["Wszystkie", "Dolny Śląsk", "Wielkopolskie", "Lubuskie", "Opolskie", "Śląskie"],
+            options=["Wszystkie", "Dolny Śląsk", "Wielkopolskie", "Lubuskie", "Opolskie", "Śląskie", "Łódzkie"],
             index=0,
             help="Wybierz region do planowania wycieczki"
         )
@@ -1646,6 +1647,9 @@ with tab2:
             elif selected_region == "Śląskie":
                 # Miejsca ze Śląskiego (współrzędne około 49.0-50.5 lat, 18.5-20.5 lon)
                 all_places = [p for p in all_places if 49.0 <= p['latitude'] <= 50.5 and 18.5 <= p['longitude'] <= 20.5]
+            elif selected_region == "Łódzkie":
+                # Miejsca z Łódzkiego (współrzędne około 51.0-52.5 lat, 18.5-20.5 lon)
+                all_places = [p for p in all_places if 51.0 <= p['latitude'] <= 52.5 and 18.5 <= p['longitude'] <= 20.5]
 
             all_galleries = db.get_all_galleries() if include_shopping else []
             proposals = []
@@ -1919,4 +1923,4 @@ with tab4:
 # FOOTER
 # ============================================
 st.markdown("---")
-st.caption("Nasza Mapa Przygód · Wersja 3.5 · Punkt startowy: Jelenia Góra")
+st.caption("Nasza Mapa Przygód · Wersja 3.6 · Punkt startowy: Jelenia Góra")
