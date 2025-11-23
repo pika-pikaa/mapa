@@ -1023,7 +1023,7 @@ def optimize_route_nearest_neighbor(places: List[Dict], start_lat: float, start_
 def generate_smart_trip(all_places: List[Dict], categories: List[str] = None,
                        max_places: int = 5, max_hours: float = 8.0,
                        prefer_unvisited: bool = True, variant: int = 0) -> Tuple[List[Dict], Dict]:
-    """Generuje wycieczkę. variant=0 - najbliższe, variant=1 - średnie, variant=2 - dalsze"""
+    """Generuje wycieczkę. variant=0-4 różne zakresy odległości"""
     candidates = all_places.copy()
     if prefer_unvisited:
         unvisited = [p for p in candidates if not p['is_visited']]
@@ -1038,11 +1038,20 @@ def generate_smart_trip(all_places: List[Dict], categories: List[str] = None,
                                                     p['latitude'], p['longitude'])) for p in candidates]
     candidates_with_dist.sort(key=lambda x: x[1])
 
-    # Różne warianty - różne zakresy odległości
-    if variant == 1:  # Średnie odległości
-        mid = len(candidates_with_dist) // 3
+    # Różne warianty - różne zakresy odległości (5 wariantów)
+    n = len(candidates_with_dist)
+    if variant == 0:  # Najbliższe miejsca
+        pass  # już posortowane od najbliższych
+    elif variant == 1:  # Blisko-średnie
+        quarter = n // 4
+        candidates_with_dist = candidates_with_dist[quarter:quarter*2] + candidates_with_dist[:quarter]
+    elif variant == 2:  # Średnie odległości
+        mid = n // 3
         candidates_with_dist = candidates_with_dist[mid:mid*2] + candidates_with_dist[:mid]
-    elif variant == 2:  # Dalsze miejsca
+    elif variant == 3:  # Średnio-daleko
+        quarter = n // 4
+        candidates_with_dist = candidates_with_dist[quarter*2:quarter*3] + candidates_with_dist[quarter:quarter*2]
+    elif variant == 4:  # Dalsze miejsca
         candidates_with_dist = candidates_with_dist[::-1]
 
     selected = []
@@ -1574,6 +1583,14 @@ with tab2:
     if "Automatyczny" in trip_mode:
         st.markdown("#### Ustawienia")
 
+        # Wybór województwa
+        selected_region = st.selectbox(
+            "Województwo",
+            options=["Wszystkie", "Dolny Śląsk", "Wielkopolskie"],
+            index=0,
+            help="Wybierz region do planowania wycieczki"
+        )
+
         # Kategorie na pełną szerokość
         pref_categories = st.multiselect(
             "Preferowane kategorie",
@@ -1587,7 +1604,7 @@ with tab2:
             max_places = st.slider("Liczba miejsc", 2, 10, 5)
             max_hours = st.slider("Maks. czas (h)", 2.0, 12.0, 8.0, 0.5)
         with col_s2:
-            num_proposals = st.slider("Liczba propozycji", 1, 3, 1)
+            num_proposals = st.slider("Liczba propozycji", 1, 5, 3)
             prefer_unvisited = st.checkbox("Preferuj nieodwiedzone", True)
 
         # Opcja zakupów
@@ -1609,9 +1626,18 @@ with tab2:
 
         if st.button("Wygeneruj wycieczki", use_container_width=True, type="primary"):
             all_places = db.get_all_places()
+
+            # Filtruj według województwa
+            if selected_region == "Dolny Śląsk":
+                # Miejsca z Dolnego Śląska (współrzędne około 50-51.5 lat, 15-17.5 lon)
+                all_places = [p for p in all_places if 50.0 <= p['latitude'] <= 51.5 and 14.5 <= p['longitude'] <= 17.5]
+            elif selected_region == "Wielkopolskie":
+                # Miejsca z Wielkopolski (współrzędne około 51.5-53.5 lat, 15.5-19 lon)
+                all_places = [p for p in all_places if 51.5 <= p['latitude'] <= 53.5 and 15.5 <= p['longitude'] <= 19.5]
+
             all_galleries = db.get_all_galleries() if include_shopping else []
             proposals = []
-            variant_names = ["Najbliższe miejsca", "Średni dystans", "Dalsze miejsca"]
+            variant_names = ["Najbliższe miejsca", "Blisko-średnie", "Średni dystans", "Średnio-daleko", "Dalsze miejsca"]
 
             with st.spinner("Planuję trasy..."):
                 for i in range(num_proposals):
