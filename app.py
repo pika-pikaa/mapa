@@ -980,7 +980,8 @@ def get_database():
     db.import_lubuskie_from_csv()  # Import Lubuskie
     db.import_opolskie_from_csv()  # Import Opolskie
     db.import_slaskie_from_csv()  # Import Śląskie
-    db.import_lodzkie_from_csv()  # Import Łódzkie
+    if hasattr(db, 'import_lodzkie_from_csv'):
+        db.import_lodzkie_from_csv()  # Import Łódzkie
     db.import_galleries_from_csv()  # Import galerii handlowych
     return db
 
