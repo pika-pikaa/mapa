@@ -1525,6 +1525,19 @@ def create_map(places: List[Dict], show_home: bool = True, show_route: bool = Fa
 # ============================================
 def login(username: str, password: str) -> bool:
     """Próba logowania użytkownika"""
+    if not hasattr(db, 'verify_user'):
+        # Fallback - akceptuj domyślnych użytkowników bez bazy
+        default_users = {
+            'mateusz': {'password': 'mateusz123', 'display_name': 'Mateusz'},
+            'elena': {'password': 'elena123', 'display_name': 'Elena'}
+        }
+        user_data = default_users.get(username.lower())
+        if user_data and user_data['password'] == password:
+            st.session_state.logged_in = True
+            st.session_state.user = {'username': username.lower(), 'display_name': user_data['display_name']}
+            return True
+        return False
+
     user = db.verify_user(username, password)
     if user:
         st.session_state.logged_in = True
