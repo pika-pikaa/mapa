@@ -30,6 +30,18 @@ st.set_page_config(
 )
 
 # ============================================
+# SESSION STATE - INICJALIZACJA NA POCZĄTKU
+# ============================================
+if 'refresh_trigger' not in st.session_state:
+    st.session_state.refresh_trigger = 0
+if 'trip_proposals' not in st.session_state:
+    st.session_state.trip_proposals = []
+if 'logged_in' not in st.session_state:
+    st.session_state.logged_in = False
+if 'user' not in st.session_state:
+    st.session_state.user = None
+
+# ============================================
 # STAŁE KONFIGURACYJNE
 # ============================================
 HOME_LOCATION = {
@@ -1003,18 +1015,6 @@ def get_database():
     return db
 
 db = get_database()
-
-# ============================================
-# SESSION STATE
-# ============================================
-if 'refresh_trigger' not in st.session_state:
-    st.session_state.refresh_trigger = 0
-if 'trip_proposals' not in st.session_state:
-    st.session_state.trip_proposals = []
-if 'logged_in' not in st.session_state:
-    st.session_state.logged_in = False
-if 'user' not in st.session_state:
-    st.session_state.user = None
 
 def trigger_refresh():
     st.session_state.refresh_trigger += 1
