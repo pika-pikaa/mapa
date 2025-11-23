@@ -977,6 +977,8 @@ def get_database():
     db = DatabaseManager()
     db.import_from_csv()  # Import Dolny Śląsk
     db.import_wielkopolska_from_csv()  # Import Wielkopolska
+    db.import_lubuskie_from_csv()  # Import Lubuskie
+    db.import_opolskie_from_csv()  # Import Opolskie
     db.import_galleries_from_csv()  # Import galerii handlowych
     return db
 
@@ -1427,7 +1429,7 @@ def create_map(places: List[Dict], show_home: bool = True, show_route: bool = Fa
 st.markdown("""
 <div class="app-header">
     <h1 class="app-title">Nasza Mapa Przygód</h1>
-    <p class="app-subtitle">Odkrywaj i planuj wycieczki po Dolnym Śląsku</p>
+    <p class="app-subtitle">Odkrywaj i planuj wycieczki po Polsce</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -1586,7 +1588,7 @@ with tab2:
         # Wybór województwa
         selected_region = st.selectbox(
             "Województwo",
-            options=["Wszystkie", "Dolny Śląsk", "Wielkopolskie"],
+            options=["Wszystkie", "Dolny Śląsk", "Wielkopolskie", "Lubuskie", "Opolskie"],
             index=0,
             help="Wybierz region do planowania wycieczki"
         )
@@ -1629,11 +1631,17 @@ with tab2:
 
             # Filtruj według województwa
             if selected_region == "Dolny Śląsk":
-                # Miejsca z Dolnego Śląska (współrzędne około 50-51.5 lat, 15-17.5 lon)
+                # Miejsca z Dolnego Śląska (współrzędne około 50-51.5 lat, 14.5-17.5 lon)
                 all_places = [p for p in all_places if 50.0 <= p['latitude'] <= 51.5 and 14.5 <= p['longitude'] <= 17.5]
             elif selected_region == "Wielkopolskie":
                 # Miejsca z Wielkopolski (współrzędne około 51.5-53.5 lat, 15.5-19 lon)
                 all_places = [p for p in all_places if 51.5 <= p['latitude'] <= 53.5 and 15.5 <= p['longitude'] <= 19.5]
+            elif selected_region == "Lubuskie":
+                # Miejsca z Lubuskiego (współrzędne około 51.5-53.0 lat, 14.5-16.5 lon)
+                all_places = [p for p in all_places if 51.5 <= p['latitude'] <= 53.0 and 14.5 <= p['longitude'] <= 16.5]
+            elif selected_region == "Opolskie":
+                # Miejsca z Opolskiego (współrzędne około 50.0-51.2 lat, 17.0-18.5 lon)
+                all_places = [p for p in all_places if 50.0 <= p['latitude'] <= 51.2 and 17.0 <= p['longitude'] <= 18.5]
 
             all_galleries = db.get_all_galleries() if include_shopping else []
             proposals = []
@@ -1907,4 +1915,4 @@ with tab4:
 # FOOTER
 # ============================================
 st.markdown("---")
-st.caption("Nasza Mapa Przygód · Wersja 3.3 · Punkt startowy: Jelenia Góra")
+st.caption("Nasza Mapa Przygód · Wersja 3.4 · Punkt startowy: Jelenia Góra")

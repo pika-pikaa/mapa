@@ -1,0 +1,151 @@
+LP,Nazwa,Kategoria,Lokalizacja,GPS,Vibe,Czas,Opis,Sezon/Godziny
+1,Stary Rynek Zielona Góra,Historia/Architektura,Zielona Góra,"51.9350, 15.5060",#architektura #historia #centrum,2-3h,Historyczne serce miasta z ratuszem i kamienicami,Cały rok; dostęp 24/7
+2,Muzeum Lubuskie Zielona Góra,Historia/Sztuka,Zielona Góra,"51.9350, 15.5080",#sztuka #kultura #edukacyjne,2-3h,Muzeum z kolekcją historyczną i artystyczną,Wtorek-niedziela; 10:00-18:00
+3,Pałac Lubomirskich Zielona Góra,Historia/Architektura,Zielona Góra,"51.9350, 15.5060",#pałacowy #neorenesansowy #zabytek,1.5-2h,Neorenesansowy pałac z XIX wieku,Maj-wrzesień; 10:00-16:00
+4,Katedra św. Jadwigi Zielona Góra,Religia/Architektura,Zielona Góra,"51.9350, 15.5070",#sakralny #gotycka #architektura,1-1.5h,Gotycka katedra z wnętrzem z XIV wieku,Codziennie; 8:00-18:00
+5,Park Słoneczny Zielona Góra,Natura/Park,Zielona Góra,"51.9380, 15.5100",#park #spacer #zielень,1-2h,Park miejski z jeziorem i trasami,Cały rok; dostęp 24/7
+6,Jezioro Guido Zielona Góra,Natura/Rekreacja,Zielona Góra,"51.9400, 15.5150",#jezioro #plaża #kąpiel,2-4h,Jezioro regatowe z plażą i infrastrukturą,Czerwiec-sierpień; dostęp 24/7
+7,Park Piastów Śląskich,Natura/Park,Zielona Góra,"51.9420, 15.5180",#park zabytkowy #pomniki #spacer,1.5-2h,Park z pomnikami i historycznym wyposażeniem,Cały rok; dostęp 24/7
+8,Muzeum Winiarstwa Zielona Góra,Kultura/Gastronomia,Zielona Góra,"51.9350, 15.5060",#wino #tradycja #degustacja,1.5-2h,Muzeum z kolekcją win i historią branży,Wtorek-niedziela; 10:00-17:00
+9,Piwnica Winiarzy,Kultura/Gastronomia,Zielona Góra,"51.9350, 15.5050",#wino #historyczne #tradycja,1-1.5h,Zabytkowa piwnica z winem i tradycją,Wtorek-niedziela; 12:00-20:00
+10,Skwer Wina Zielona Góra,Kultura/Gastronomia,Zielona Góra,"51.9350, 15.5070",#wino #plac #festiwal,1-2h,Plac z dożynkami i festiwalami winiarskimi,Cały rok; dostęp 24/7
+11,Muzeum Puszkiniana,Historia/Kultura,Zielona Góra,"51.9350, 15.5100",#literatura #rosyjskie #muzeum,1.5-2h,Muzeum poświęcone Aleksandrowi Puszkowi,Wtorek-sobota; 10:00-16:00
+12,Zamek w Żaganiu,Historia/Architektura,Żagań,"51.7950, 15.2850",#barokowy #pałacowy #muzeum,2-3h,Barokowy zamek z muzeum i ogrodami,Wtorek-niedziela; 10:00-17:00
+13,Park Zamkowy Żagań,Natura/Park,Żagań,"51.7950, 15.2850",#park zabytkowy #spacer #historia,1.5-2h,Park otaczający zamek z alejami,Cały rok; dostęp 24/7
+14,Muzeum Twierdzy Żary,Historia/Militaria,Żary,"51.6430, 15.2850",#militarne #historia #odkrywanie,2-3h,Muzeum fortyfikacji i historii wojennej,Wtorek-niedziela; 10:00-16:00
+15,Stary Rynek Żary,Historia/Architektura,Żary,"51.6430, 15.2880",#architektura #historia #ratusz,1-2h,Historyczny rynek z ratuszem,Cały rok; dostęp 24/7
+16,Jezioro Żary,Natura/Rekreacja,Żary,"51.6500, 15.2800",#jezioro #żeglarstwo #plaża,2-4h,Piękne jezioro z marinami i plażami,Czerwiec-sierpień; dostęp 24/7
+17,Muzeum Regionalnego Żary,Historia/Kultura,Żary,"51.6430, 15.2850",#regionalne #sztuka #edukacyjne,1.5-2h,Muzeum z kolekcją historyczną regionu,Wtorek-niedziela; 10:00-17:00
+18,Wieża Ciśnień Żary,Historia/Architektura,Żary,"51.6450, 15.2870",#industrialne #zabytek #historyczne,0.5-1h,Zabytkowa wieża z XIX wieku,Maj-wrzesień; 10:00-16:00
+19,Park im. Sienkiewicza Żary,Natura/Park,Żary,"51.6480, 15.2900",#park #spacer #zielень,1-2h,Miejski park z nauką przyrody,Cały rok; dostęp 24/7
+20,Muzeum Regionu Żary Łęczna,Historia/Kultura,Żary,"51.6430, 15.2850",#regionalne #archeologia #sztuka,1.5-2h,Muzeum archeologiczno-historyczne,Wtorek-niedziela; 10:00-16:00
+21,Kościół Maryjny Żary,Religia/Architektura,Żary,"51.6450, 15.2850",#sakralny #gotycka #zabytek,0.5-1h,Gotycki kościół z wieżą,Codziennie; 8:00-18:00
+22,Pałac w Białej Cerkwi,Historia/Muzeum,Biała Cerkiew,"51.8500, 15.1200",#klasycystyczny #pałacowy #park,1.5-2h,Pałac klasycystyczny z parkiem,Maj-wrzesień; 10:00-16:00
+23,Jeziorko Biały Dwór,Natura/Rekreacja,Biały Dwór,"51.8300, 15.1000",#jezioro #spacer #kajaki,2-3h,Malutkie jezioro w lesie z szlakami,Cały rok; dostęp 24/7
+24,Muzeum Podkowiaka Żary,Historia/Kultura,Żary,"51.6430, 15.2850",#tradycja #rękodzieło #muzeum,1-1.5h,Muzeum rzemiosła i tradycji,Wtorek-sobota; 10:00-15:00
+25,Rezerwat Stawy Pargowe,Natura/Rezerwat,Żary,"51.6200, 15.2500",#stawy #ptaki #przyroda,1.5-2h,Rezerwat ornitologiczny ze stawami,Cały rok; dostęp 24/7
+26,Park Linowy Żagań,Rozrywka/Przygoda,Żagań,"51.7950, 15.2900",#przygoda #aktywne #rodzinne,2-3h,Park ze ścieżkami linowymi i przeszkodami,Maj-wrzesień; 10:00-18:00
+27,Muzeum Historii Żelaza,Historia/Technika,Żary,"51.6430, 15.2850",#industrialne #technika #edukacyjne,1.5-2h,Muzeum górnictwa i produkcji żelaza,Wtorek-niedziela; 9:00-17:00
+28,Wiatrak w Żaganiu,Technika/Architektura,Żagań,"51.7950, 15.2850",#zabytek #młynarstwo #tradycja,0.5-1h,Zabytkowy wiatrak koźlak,Maj-wrzesień; 10:00-16:00
+29,Park Zdrojowy Żary,Natura/Relaks,Żary,"51.6500, 15.2900",#park #spacer #uzdrowisko,1-2h,Park zdrojowy z fontannami,Cały rok; dostęp 24/7
+30,Muzeum Sztuki Nowoczesnej,Sztuka/Kultura,Zielona Góra,"51.9350, 15.5100",#sztuka współczesna #wystawy #galeria,2-3h,Galeria sztuki współczesnej,Wtorek-niedziela; 10:00-18:00
+31,Stary Rynek Gorzów,Historia/Architektura,Gorzów Wielkopolski,"52.7680, 15.2290",#architektura #historia #centrum,1.5-2h,Historyczne centrum miasta z ratuszem,Cały rok; dostęp 24/7
+32,Muzeum Lubuskie Gorzów,Historia/Sztuka,Gorzów Wielkopolski,"52.7680, 15.2290",#sztuka #kultura #edukacyjne,2-3h,Muzeum z kolekcją sztuki i historii,Wtorek-niedziela; 10:00-18:00
+33,Katedra Gorzów,Religia/Architektura,Gorzów Wielkopolski,"52.7680, 15.2300",#sakralny #architektura #gotycka,1-1.5h,Katedra z bogatą historią,Codziennie; 8:00-18:00
+34,Fortyfikacje Gorzów,Historia/Militaria,Gorzów Wielkopolski,"52.7680, 15.2290",#militarne #historia #zabytek,1.5-2h,Pozostałości umocnień z XIX wieku,Maj-wrzesień; 10:00-16:00
+35,Park Słoneczny Gorzów,Natura/Park,Gorzów Wielkopolski,"52.7700, 15.2350",#park #spacer #zielень,1.5-2h,Park miejski z faunę i florą,Cały rok; dostęp 24/7
+36,Jezioro Kostrzyn,Natura/Rekreacja,Kostrzyn nad Odrą,"52.5850, 14.6450",#jezioro #żeglarstwo #sport wodny,2-4h,Jezioro na Odrze z dostępem do przyrody,Czerwiec-sierpień; dostęp 24/7
+37,Muzeum Regionu Gorzów,Historia/Kultura,Gorzów Wielkopolski,"52.7680, 15.2290",#regionalne #archeologia #sztuka,1.5-2h,Muzeum z kolekcją lokalną,Wtorek-niedziela; 10:00-17:00
+38,Pałac w Kłopotowie,Historia/Architektura,Kłopotowo,"52.7300, 15.0500",#pałacowy #klasycystyczny #park,1.5-2h,Pałac klasycystyczny w parku,Maj-wrzesień; 10:00-16:00
+39,Zamek w Kozielicach,Historia/Ruiny,Kozielice,"52.6200, 15.1200",#ruiny #średniowiecze #romantyczne,1-1.5h,Ruiny zamku rycerskiego,Cały rok; dostęp 24/7
+40,Kościół Świętego Jerzego Gorzów,Religia/Architektura,Gorzów Wielkopolski,"52.7680, 15.2310",#sakralny #gotycki #zabytek,0.5-1h,Gotycki kościół z XVIII wieku,Codziennie; 8:00-18:00
+41,Park Zdrojowy Gorzów,Natura/Relaks,Gorzów Wielkopolski,"52.7750, 15.2400",#park #spacer #uzdrowisko,1-2h,Park zdrojowy z fontannami,Cały rok; dostęp 24/7
+42,Muzeum Historii Gorzowa,Historia/Kultura,Gorzów Wielkopolski,"52.7680, 15.2290",#historia #kultura #edukacyjne,1.5-2h,Muzeum o historii miasta,Wtorek-niedziela; 9:00-17:00
+43,Rezerwat Ujście Warty,Natura/Rezerwat,Ujście Warty,"53.1200, 14.6500",#ptaki #rzeka #przyroda,2-3h,Rezerwat z bogatym ptactwem,Cały rok; dostęp 24/7
+44,Jezioro Lubusz,Natura/Rekreacja,Lubniewice,"52.4500, 14.9000",#jezioro #plaża #sport wodny,2-4h,Sztuczne jezioro z plażami,Czerwiec-sierpień; dostęp 24/7
+45,Muzeum Techniki Gorzów,Technika/Historia,Gorzów Wielkopolski,"52.7680, 15.2290",#technika #historia #edukacyjne,1.5-2h,Muzeum z kolekcją maszyn,Wtorek-niedziela; 10:00-16:00
+46,Piwnice Gorzowskie,Historia/Gastronomia,Gorzów Wielkopolski,"52.7680, 15.2300",#tradycja #historyczne #piwo,1-1.5h,Zabytkowe piwnice z brauką,Wtorek-niedziela; 12:00-20:00
+47,Park Leśny Gorzów,Natura/Park,Gorzów Wielkopolski,"52.7600, 15.2500",#las #szlaki #spacer,1.5-2h,Leśny park z trasami turystycznymi,Cały rok; dostęp 24/7
+48,Kościół Ewangelicki Gorzów,Religia/Architektura,Gorzów Wielkopolski,"52.7680, 15.2320",#sakralny #zabytek #architektura,0.5-1h,Kościół w stylu gotycko-renesansowym,Codziennie; 8:00-18:00
+49,Muzeum Militaria Gorzów,Historia/Militaria,Gorzów Wielkopolski,"52.7680, 15.2290",#militarne #historia #uzbrojenie,1.5-2h,Muzeum z kolekcją militariów,Wtorek-niedziela; 9:00-17:00
+50,Stawy Gorzowskie,Natura/Rekreacja,Gorzów Wielkopolski,"52.7500, 15.2400",#stawy #ryby #ptaki,1.5-2h,Zespół stawów rybnych,Cały rok; dostęp 24/7
+51,Muzeum Sztuki Gorzów,Sztuka/Kultura,Gorzów Wielkopolski,"52.7680, 15.2300",#sztuka #wystawy #galeria,2-3h,Galeria sztuki z wystawami,Wtorek-niedziela; 10:00-18:00
+52,Park Zdrojowy Międzyrzecz,Natura/Relaks,Międzyrzecz,"52.4480, 14.9990",#park #spacer #uzdrowisko,1-2h,Park zdrojowy z historią,Cały rok; dostęp 24/7
+53,Muzeum Międzyrzecza,Historia/Kultura,Międzyrzecz,"52.4480, 14.9990",#historia #kultura #edukacyjne,1.5-2h,Muzeum regionalne,Wtorek-niedziela; 10:00-17:00
+54,Fortyfikacje Międzyrzecza,Historia/Militaria,Międzyrzecz,"52.4480, 15.0000",#militarne #historia #zabytek,2-3h,Pozostałości umocnień z XX wieku,Cały rok; dostęp 24/7
+55,Jezioro Międzyrzeckie,Natura/Rekreacja,Międzyrzecz,"52.4600, 15.0100",#jezioro #plaża #kąpiel,2-4h,Jezioro z infrastrukturą rekreacyjną,Czerwiec-sierpień; dostęp 24/7
+56,Park Narodowy Ujście Warty,Natura/Park,Ujście Warty,"53.1200, 14.6500",#park narodowy #ptaki #rzeka,Cały dzień,Park chroniq ptactwo i ekosystemy,Cały rok; dostęp 24/7
+57,Rezerwat Łęgi Odry,Natura/Rezerwat,Łęgi Odry,"52.6000, 14.7000",#ekosystem #rzeka #przyroda,1.5-2h,Rezerwat nad Odrą z bogatą fauną,Cały rok; dostęp 24/7
+58,Puszcza Lubuska,Natura/Las,Lubniewice,"52.4500, 14.9500",#las #szlaki #przyroda,Cały dzień,Rozległy kompleks leśny z trasami,Cały rok; dostęp 24/7
+59,Jezioro Wolsztyńskie,Natura/Rekreacja,Wolsztyn,"51.8500, 15.5500",#jezioro #plaża #sport wodny,2-4h,Czyste jezioro z plażą,Czerwiec-sierpień; dostęp 24/7
+60,Rezerwat Stawy Lubichowskie,Natura/Rezerwat,Lubichowo,"52.3500, 14.8000",#stawy #ornitologiczne #ptaki,2-3h,Rezerwat ornitologiczny ze stawami,Cały rok; dostęp 24/7
+61,Szlak Bocianów Lubuskich,Natura/Szlak,Gorzów do Żary,"52.6000, 15.2000",#szlak turystyczny #bocjany #przyroda,Cały dzień,Turystyczny szlak z bocianiami,Cały rok; dostęp 24/7
+62,Park Krajobrazowy Żary,Natura/Park,Żary,"51.6400, 15.2900",#park krajobrazowy #jeziora #szlaki,Cały dzień,Park z jeziorami i szlakami,Cały rok; dostęp 24/7
+63,Rezerwat Dęby Lubuszko,Natura/Las,Lubuszko,"52.5000, 15.0000",#las dębowy #pomniki przyrody #szlaki,1.5-2h,Rezerwat dębów pomnikowych,Cały rok; dostęp 24/7
+64,Jezioro Gościęcinskie,Natura/Rekreacja,Gościęcinów,"51.8000, 14.5000",#jezioro #plaża #kąpiel,2-4h,Piękne jezioro z infrastrukturą,Czerwiec-sierpień; dostęp 24/7
+65,Bog Przylądek Czarna,Natura/Rezerwat,Czarna,"52.8000, 14.4000",#torfowisko #przyroda #rzadkie rośliny,1.5-2h,Rezerwat torfowiskowy z roślinnością,Cały rok; dostęp 24/7
+66,Rzeka Odra Szlak Wodny,Natura/Szlak wodny,Od Kostrzyna do Szczecina,"52.5000, 14.8000",#kajaki #żeglarstwo #rzeka,Cały dzień,Zabytkowy szlak wodny na Odrze,Maj-wrzesień; dostęp 24/7
+67,Jezioro Trzebieszowskie,Natura/Rekreacja,Trzebieszów,"52.4000, 14.7000",#jezioro #plaża #sport wodny,2-4h,Jezioro z dostępem do przyrody,Czerwiec-sierpień; dostęp 24/7
+68,Rezerwat Stawy Milickie,Natura/Rezerwat,Milicz,"51.5700, 17.2400",#stawy #ptaki #ornitologia,2-3h,Rezerwat ze stawami rybnych,Cały rok; dostęp 24/7
+69,Park Leśny Żagań,Natura/Park,Żagań,"51.7900, 15.2800",#las #szlaki #przyroda,1.5-2h,Park leśny z trasami turystycznymi,Cały rok; dostęp 24/7
+70,Rezerwat Łęgi Twierdzy,Natura/Rezerwat,Żary,"51.6300, 15.2700",#ekosystem #rzeka #przyroda,1.5-2h,Rezerwat nad rzeką z ekosystemem,Cały rok; dostęp 24/7
+71,Jezioro Żeglarskie Gorzów,Natura/Rekreacja,Gorzów Wielkopolski,"52.7600, 15.2200",#jezioro #żeglarstwo #sport wodny,2-4h,Jezioro regatowe z bazą żeglarską,Maj-wrzesień; dostęp 24/7
+72,Puszcza Zagórna,Natura/Las,Żagań,"51.8200, 15.1500",#las #szlaki #przyroda,2-4h,Rozległy las z trasami,Cały rok; dostęp 24/7
+73,Rezerwat Mokradła Lubuskie,Natura/Rezerwat,Łęgi,"52.5500, 15.0000",#mokradła #ptaki #przyroda,1.5-2h,Rezerwat mokradeł z bogatym ptactwem,Cały rok; dostęp 24/7
+74,Szlak Rowerowy Odra,Natura/Szlak,Kostrzyn do Świnoujścia,"52.4000, 14.8000",#rower #rzeka #turystyka,Cały dzień,Międzynarodowy szlak rowerowy,Maj-wrzesień; dostęp 24/7
+75,Park Botaniczny Żary,Natura/Park,Żary,"51.6500, 15.2800",#botaniczne #spacer #rośliny,1.5-2h,Park z rzadkimi roślinami,Cały rok; dostęp 24/7
+76,Jezioro Skorzęcin,Natura/Rekreacja,Skorzęcin,"51.9500, 15.6000",#jezioro #plaża #rekreacja,2-4h,Jezioro z dobrą infrastrukturą,Czerwiec-sierpień; dostęp 24/7
+77,Rezerwat Torfowiska Lubuskie,Natura/Rezerwat,Lubichów,"52.3800, 14.9000",#torfowisko #rzadkie rośliny #przyroda,1.5-2h,Rezerwat z endemitami roślin,Cały rok; dostęp 24/7
+78,Las Kędzierzyn,Natura/Las,Kędzierzyn-Koźle,"50.6800, 18.2500",#las #szlaki #przyroda,2-4h,Kompleks leśny z szlakami,Cały rok; dostęp 24/7
+79,Szlak Bocianów do Żar,Natura/Szlak,Żary do Żagania,"51.7000, 15.2000",#bocjany #szlak turystyczny #przyroda,Cały dzień,Szlak poświęcony bocianiom,Maj-sierpień; dostęp 24/7
+80,Jezioro Owidzkie,Natura/Rekreacja,Owidiski,"52.1000, 15.4000",#jezioro #plaża #sport wodny,2-4h,Jezioro z dostępem do sportów wodnych,Czerwiec-sierpień; dostęp 24/7
+81,Rynek Kostrzyn,Historia/Architektura,Kostrzyn nad Odrą,"52.5850, 14.6450",#architektura #história #centrum,1.5-2h,Historyczne centrum miasta,Cały rok; dostęp 24/7
+82,Twierdza Kostrzyn,Historia/Militaria,Kostrzyn nad Odrą,"52.5850, 14.6450",#militarne #historia #twierdza,2-3h,Zabytkowa twierdza z XVIII wieku,Cały rok; 9:00-17:00
+83,Muzeum Twierdzy Kostrzyn,Historia/Militaria,Kostrzyn nad Odrą,"52.5850, 14.6450",#militarne #historia #edukacyjne,1.5-2h,Muzeum w forcie twierdzy,Wtorek-niedziela; 10:00-16:00
+84,Kościół Świętego Krzysztofa Kostrzyn,Religia/Architektura,Kostrzyn nad Odrą,"52.5850, 14.6450",#sakralny #gotycka #zabytek,0.5-1h,Gotycki kościół z XVI wieku,Codziennie; 8:00-18:00
+85,Park Zdrojowy Kostrzyn,Natura/Relaks,Kostrzyn nad Odrą,"52.5900, 14.6500",#park #spacer #uzdrowisko,1-2h,Park zdrojowy z fontannami,Cały rok; dostęp 24/7
+86,Muzeum Kostrzyna,Historia/Kultura,Kostrzyn nad Odrą,"52.5850, 14.6450",#regionalne #sztuka #kultura,1.5-2h,Muzeum z kolekcją lokalną,Wtorek-niedziela; 10:00-17:00
+87,Rynek Żagańskiego,Historia/Architektura,Żagań,"51.7950, 15.2850",#architektura #historia #ratusz,1-2h,Historyczny rynek z ratuszem,Cały rok; dostęp 24/7
+88,Muzeum Twierdzy Żagań,Historia/Militaria,Żagań,"51.7950, 15.2850",#militarne #historia #odkrywanie,2-3h,Muzeum fortyfikacji,Wtorek-niedziela; 10:00-16:00
+89,Kościół Górny Żagań,Religia/Architektura,Żagań,"51.7950, 15.2850",#sakralny #gotycki #zabytek,0.5-1h,Kościół z bogatą historią,Codziennie; 8:00-18:00
+90,Pałac Biskupów Żagań,Historia/Architektura,Żagań,"51.7950, 15.2850",#pałacowy #barokowy #zabytek,1.5-2h,Barokowy pałac biskupów,Maj-wrzesień; 10:00-16:00
+91,Rynek Międzyrzecza,Historia/Architektura,Międzyrzecz,"52.4480, 14.9990",#architektura #historia #centrum,1-2h,Historyczne centrum miasta,Cały rok; dostęp 24/7
+92,Twierdza Międzyrzecz,Historia/Militaria,Międzyrzecz,"52.4480, 15.0000",#militarne #historia #zabytek,2-3h,Zabytkowa twierdza XX wieku,Cały rok; 9:00-17:00
+93,Muzeum Międzyrzecz,Historia/Kultura,Międzyrzecz,"52.4480, 14.9990",#regionalne #sztuka #edukacyjne,1.5-2h,Muzeum z kolekcją historyczną,Wtorek-niedziela; 10:00-17:00
+94,Kościół Św. Marii Międzyrzecz,Religia/Architektura,Międzyrzecz,"52.4480, 14.9990",#sakralny #zabytek #architektura,0.5-1h,Historyczny kościół parafialny,Codziennie; 8:00-18:00
+95,Park Zdrojowy Międzyrzecz,Natura/Relaks,Międzyrzecz,"52.4480, 15.0000",#park #spacer #uzdrowisko,1-2h,Park zdrojowy z historią,Cały rok; dostęp 24/7
+96,Rynek Nowa Sól,Historia/Architektura,Nowa Sól,"51.8050, 16.0100",#architektura #história #centrum,1-2h,Historyczne centrum miasta,Cały rok; dostęp 24/7
+97,Muzeum Nowej Soli,Historia/Kultura,Nowa Sól,"51.8050, 16.0100",#regionalne #sztuka #edukacyjne,1.5-2h,Muzeum z kolekcją lokalną,Wtorek-niedziela; 10:00-17:00
+98,Kościół Świętych Apostołów,Religia/Architektura,Nowa Sól,"51.8050, 16.0100",#sakralny #zabytek #gotycki,0.5-1h,Gotycki kościół z XVI wieku,Codziennie; 8:00-18:00
+99,Zamek w Pięciborze,Historia/Ruiny,Pięciborze,"51.5500, 15.1000",#ruiny #średniowiecze #romantyczne,1-1.5h,Ruiny średniowiecznego zamku,Cały rok; dostęp 24/7
+100,Park Pięciborski,Natura/Park,Pięciborze,"51.5500, 15.1000",#park zabytkowy #spacer #historia,1-2h,Park otaczający ruiny,Cały rok; dostęp 24/7
+101,Rynek Żar,Historia/Architektura,Żary,"51.6430, 15.2850",#architektura #historia #ratusz,1-2h,Historyczny rynek z ratuszem,Cały rok; dostęp 24/7
+102,Pałac Generalski Żary,Historia/Architektura,Żary,"51.6430, 15.2850",#pałacowy #zabytek #XIX w,1-1.5h,Zabytkowy pałac z XIX wieku,Maj-wrzesień; 10:00-16:00
+103,Kościół Maryjny Żary,Religia/Architektura,Żary,"51.6450, 15.2850",#sakralny #gotycka #zabytek,0.5-1h,Gotycki kościół z XVI wieku,Codziennie; 8:00-18:00
+104,Rynek Drezdenko,Historia/Architektura,Drezdenko,"52.3850, 15.2150",#architektura #história #centrum,1-2h,Historyczne centrum miasta,Cały rok; dostęp 24/7
+105,Twierdza Drezdenko,Historia/Militaria,Drezdenko,"52.3850, 15.2150",#militarne #historia #zabytek,1.5-2h,Zabytkowa twierdza XIX wieku,Maj-wrzesień; 10:00-16:00
+106,Winiarnia Zielonogórska,Kultura/Gastronomia,Zielona Góra,"51.9350, 15.5060",#wino #degustacja #tradycja,1.5-2h,Winiarnia z degustacjami win,Wtorek-niedziela; 11:00-19:00
+107,Piwiarnia Historyczna Żary,Kultura/Gastronomia,Żary,"51.6430, 15.2850",#piwo #tradycja #historyczne,1-1.5h,Historyczna piwiarnia z lokalnym piwem,Codziennie; 12:00-20:00
+108,Restauracja Pałacowa Żagań,Kultura/Gastronomia,Żagań,"51.7950, 15.2850",#gastronomia #tradycyjna kuchnia #relaks,2-3h,Restauracja w barokowym pałacu,Codziennie; 12:00-22:00
+109,Kawiarnia Artystyczna Gorzów,Kultura/Gastronomia,Gorzów Wielkopolski,"52.7680, 15.2300",#kawiarnia #sztuka #relaks,1-2h,Kawiarnia z galerią sztuki,Wtorek-niedziela; 10:00-18:00
+110,Piekarnia Tradycyjna Żary,Kultura/Gastronomia,Żary,"51.6430, 15.2850",#pieczenie #tradycja #chleb,0.5-1h,Tradycyjna piekarnia z czarnym chlebem,Poniedziałek-sobota; 7:00-17:00
+111,Restauracja nad Odrą Kostrzyn,Kultura/Gastronomia,Kostrzyn nad Odrą,"52.5850, 14.6450",#ryby #tradycyjna kuchnia #widok,2-3h,Restauracja z widokiem na Odrę,Codziennie; 12:00-22:00
+112,Termy Żary,Relaks/Aquapark,Żary,"51.6500, 15.2900",#termalne #spa #aquapark,2-4h,Kompleks termalny ze strefą saun,Cały rok; 8:00-22:00
+113,Spa Gorzów,Relaks/Zdrowie,Gorzów Wielkopolski,"52.7680, 15.2300",#spa #masaże #relaks,2-4h,Kompleks SPA z zabiegami,Cały rok; 10:00-20:00
+114,Browar Rodzinny Żary,Kultura/Gastronomia,Żary,"51.6430, 15.2850",#piwo #tradycja #muzeum,1.5-2h,Browar z możliwością zwiedzania,Wtorek-sobota; 10:00-18:00
+115,Gorzelnia Tradycyjna Gorzów,Kultura/Gastronomia,Gorzów Wielkopolski,"52.7680, 15.2300",#spirytus #tradycja #degustacja,1-1.5h,Tradicyjna gorzelnia z degustacją,Wtorek-sobota; 10:00-17:00
+116,Wędzarnia Łęgi,Kultura/Gastronomia,Łęgi,"52.5500, 15.0000",#wędliny #tradycja #produkty,1-1.5h,Wędzarnia z tradycyjnymi produktami,Poniedziałek-piątek; 8:00-16:00
+117,Cukiernia Artystyczna Zielona Góra,Kultura/Gastronomia,Zielona Góra,"51.9350, 15.5060",#cukiernictwo #tradycja #deserty,0.5-1h,Artystyczna cukiernia z regionalnym ciastem,Codziennie; 9:00-19:00
+118,Kawiarnia Koncertowa Żagań,Kultura/Gastronomia,Żagań,"51.7950, 15.2850",#kawiarnia #muzyka #relaks,1.5-2h,Kawiarnia z koncertami,Wtorek-niedziela; 10:00-20:00
+119,Restauracja Ribiery Kostrzyn,Kultura/Gastronomia,Kostrzyn nad Odrą,"52.5850, 14.6450",#ryby #regionalny #widok,2-3h,Restauracja specjalizująca się w rybami,Codziennie; 11:00-22:00
+120,Piekarnia Chleb Żyta,Kultura/Gastronomia,Żary,"51.6430, 15.2850",#chleb #tradycja #pieczenie,0.5-1h,Tradycyjna piekarnia żytnio-pszennego,Poniedziałek-sobota; 7:00-17:00
+121,Kawiarnia Podróżnika Międzyrzecz,Kultura/Gastronomia,Międzyrzecz,"52.4480, 14.9990",#kawiarnia #podróże #eksotyczne,1-2h,Kawiarnia z eksotyczną kawą,Codziennie; 9:00-19:00
+122,Restauracja Starorzecze Żary,Kultura/Gastronomia,Żary,"51.6430, 15.2850",#tradycyjna kuchnia #relaks #widok,2-3h,Restauracja z widokiem na rzekę,Codziennie; 12:00-22:00
+123,Winiarnia Zielonogórska Boutique,Kultura/Gastronomia,Zielona Góra,"51.9350, 15.5080",#wino #tasting #kurs,2-3h,Winiarnia z kursami degustacji,Wtorek-niedziela; 12:00-20:00
+124,Piekarnia Staropolska Gorzów,Kultura/Gastronomia,Gorzów Wielkopolski,"52.7680, 15.2300",#chleb #makownik #tradycja,0.5-1h,Piekarnia z makownikiem tradycyjnym,Poniedziałek-sobota; 7:00-17:00
+125,Restauracja Zamkowa Żagań,Kultura/Gastronomia,Żagań,"51.7950, 15.2850",#zamek #gościnność #polskie potrawy,2-3h,Restauracja w barokowym zamku,Codziennie; 12:00-22:00
+126,Muzeum Żołnierza Zapomnianego Kostrzyn,Historia/Militaria,Kostrzyn nad Odrą,"52.5850, 14.6450",#militarne #II WŚ #edukacyjne,1.5-2h,Muzeum żołnierzy II Wojny Światowej,Wtorek-niedziela; 10:00-17:00
+127,Park Dinozaurów Żary,Rozrywka/Edukacja,Żary,"51.6600, 15.3000",#dinozaury #rodzinne #edukacyjne,2-3h,Park z figurami dinozaurów,Maj-wrzesień; 10:00-18:00
+128,Muzeum Chleba Żary,Historia/Kultura,Żary,"51.6430, 15.2850",#tradycja #piekarstwo #edukacyjne,1-1.5h,Muzeum poświęcone tradycji piekarstwa,Wtorek-sobota; 10:00-16:00
+129,Obserwatorium Astronomiczne Zielona Góra,Nauka/Edukacja,Zielona Góra,"51.9350, 15.5100",#astronomia #teleskopy #edukacyjne,1.5-2h,Obserwatorium z pokazami nieba,Piątek-niedziela; 19:00-22:00
+130,Aquarium Lubuskie,Przyroda/Edukacja,Żary,"51.6500, 15.2900",#ryby #edukacyjne #rodzinne,1.5-2h,Aquarium z rybami śródlądowymi,Codziennie; 10:00-18:00
+131,Muzeum Gwiazd Żary,Historia/Kultura,Żary,"51.6430, 15.2850",#kinematografia #gwiazdy #edukacyjne,1-1.5h,Muzeum kinematografii,Wtorek-niedziela; 10:00-17:00
+132,Park Miniatur Gorzów,Rozrywka/Edukacja,Gorzów Wielkopolski,"52.7700, 15.2400",#miniaturki #edukacyjne #rodzinne,1.5-2h,Park miniatur zabytków Lubuskgo,Maj-wrzesień; 10:00-18:00
+133,Muzeum Historii Górnictwa Żary,Historia/Technika,Żary,"51.6430, 15.2850",#górnictwo #technika #edukacyjne,1.5-2h,Muzeum górnictwa i produkcji,Wtorek-niedziela; 9:00-17:00
+134,Park Rowerowy Lubuszki,Rozrywka/Sport,Lubuszki,"52.4500, 14.9500",#rower #trasy #rodzinne,2-3h,Park z trasami rowerowymi,Maj-wrzesień; 9:00-18:00
+135,Muzeum Sztuki Gorzów,Sztuka/Kultura,Gorzów Wielkopolski,"52.7680, 15.2300",#sztuka współczesna #wystawy #galeria,2-3h,Galeria sztuki współczesnej,Wtorek-niedziela; 10:00-18:00
+136,Park Treningowy Międzyrzecz,Rozrywka/Sport,Międzyrzecz,"52.4500, 15.0100",#fitness #sport #rodzinne,1.5-2h,Park z urządzeniami treningowymi,Cały rok; 9:00-21:00
+137,Skansen Wsi Lubuskiej Żary,Kultura/Skansen,Żary,"51.6500, 15.3100",#tradycja #architektura #edukacyjne,2-3h,Skansen z zabudową wsi lubuskiej,Maj-wrzesień; 10:00-17:00
+138,Muzeum Medycyny Kostrzyn,Historia/Nauka,Kostrzyn nad Odrą,"52.5850, 14.6450",#medycyna #historia #edukacyjne,1.5-2h,Muzeum historii medycyny,Wtorek-niedziela; 10:00-16:00
+139,Park Edukacyjny Gorzów,Rozrywka/Edukacja,Gorzów Wielkopolski,"52.7750, 15.2400",#edukacja #rodzinne #aktywne,2-3h,Park z stanowiskami edukacyjnymi,Maj-wrzesień; 10:00-18:00
+140,Muzeum Przyrody Żary,Przyroda/Edukacja,Żary,"51.6400, 15.2900",#przyroda #fauna #flor #edukacyjne,1.5-2h,Muzeum z kolekcją przyrodniczą,Wtorek-niedziela; 9:00-17:00
+141,Fotostudio Artystyczne Zielona Góra,Sztuka/Kultura,Zielona Góra,"51.9350, 15.5080",#fotografia #sztuka #galeria,1-2h,Galeria fotografii ze wernisażami,Wtorek-niedziela; 12:00-18:00
+142,Muzeum Rękodzieła Lubuszko,Kultura/Tradycja,Lubuszko,"52.5000, 15.0000",#rękodzieło #tradycja #edukacyjne,1.5-2h,Muzeum tradycyjnych rzemiosł,Wtorek-sobota; 10:00-16:00
+143,Park Linowy Gorzów,Rozrywka/Przygoda,Gorzów Wielkopolski,"52.7600, 15.2500",#przygoda #aktywne #rodzinne,2-3h,Park ze ścieżkami linowymi,Maj-wrzesień; 10:00-18:00
+144,Muzeum Flory Zachodniej,Przyroda/Edukacja,Żary,"51.6500, 15.2900",#botanika #rośliny #edukacyjne,1.5-2h,Muzeum roślin i ekosystemów,Wtorek-niedziela; 10:00-17:00
+145,Studio Rzemiosła Żagań,Kultura/Tradycja,Żagań,"51.7950, 15.2850",#rękodzieło #tradycja #warsztaty,1.5-2h,Studio z warsztatami rzemiosła,Maj-wrzesień; 10:00-17:00
+146,Muzeum Techniki Rolnej,Technika/Historia,Żary,"51.6400, 15.2800",#rolnictwo #maszyny #edukacyjne,1.5-2h,Muzeum maszyn i narzędzi rolnych,Wtorek-niedziela; 9:00-17:00
+147,Park Zabawy Międzyrzecz,Rozrywka/Rodzinne,Międzyrzecz,"52.4500, 15.0200",#zabawy #dzieci #aktywne,2-3h,Park z zabawkami i przeszkodami,Maj-wrzesień; 10:00-18:00
+148,Galeria Sztuki Nowoczesnej Kostrzyn,Sztuka/Kultura,Kostrzyn nad Odrą,"52.5850, 14.6450",#sztuka współczesna #wystawy #galeria,1.5-2h,Galeria sztuki współczesnej,Wtorek-niedziela; 11:00-17:00
+149,Muzeum Tradycji Łowieckiej,Historia/Kultura,Żary,"51.6430, 15.2850",#łowiectwo #tradycja #edukacyjne,1-1.5h,Muzeum polowań i tradycji myśliwskiej,Wtorek-sobota; 10:00-15:00
+150,Park Przyrody Edukacyjny,Przyroda/Edukacja,Lubuszko,"52.5000, 15.0000",#przyroda #edukacja #szlaki,2-4h,Park z trasami edukacyjnymi,Maj-wrzesień; 9:00-17:00
