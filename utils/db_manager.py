@@ -653,3 +653,67 @@ class DatabaseManager:
                 return []
             finally:
                 conn.close()
+
+    def import_wielkopolska_from_csv(self, csv_path: str = "data/baza-wielkopolska.csv") -> bool:
+        """
+        Importuje atrakcje Wielkopolski z pliku CSV
+        """
+        with self._lock:
+            conn = self._get_connection()
+            try:
+                cursor = conn.cursor()
+
+                # Sprawdź czy dane z Wielkopolski już istnieją (po nazwie)
+                cursor.execute("SELECT COUNT(*) FROM places WHERE name LIKE '%Poznań%' OR location = 'Poznań'")
+                if cursor.fetchone()[0] > 10:  # Jeśli jest dużo miejsc z Poznania
+                    return True
+
+                # Znajdź najwyższy LP
+                cursor.execute("SELECT MAX(lp) FROM places")
+                max_lp = cursor.fetchone()[0] or 0
+
+                # Wczytaj dane z CSV
+                df = pd.read_csv(csv_path)
+
+                imported = 0
+                for _, row in df.iterrows():
+                    # Sprawdź czy miejsce już istnieje
+                    cursor.execute("SELECT id FROM places WHERE name = ?", (row['Nazwa'],))
+                    if cursor.fetchone():
+                        continue
+
+                    gps = row['GPS']
+                    latitude, longitude = self._parse_gps_coordinates(gps)
+
+                    max_lp += 1
+                    cursor.execute('''
+                        INSERT INTO places (
+                            lp, name, category, location, latitude, longitude,
+                            vibe, time_needed, description, season_hours, is_visited
+                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    ''', (
+                        max_lp,
+                        row['Nazwa'],
+                        row['Kategoria'],
+                        row['Lokalizacja'],
+                        latitude,
+                        longitude,
+                        row['Vibe'],
+                        row['Czas'],
+                        row['Opis'],
+                        row['Sezon/Godziny'],
+                        False
+                    ))
+                    imported += 1
+
+                conn.commit()
+                if imported > 0:
+                    print(f"Zaimportowano {imported} atrakcji z Wielkopolski.")
+                return True
+
+            except Exception as e:
+                print(f"Błąd podczas importu Wielkopolski: {e}")
+                conn.rollback()
+                return False
+            finally:
+                conn.close()

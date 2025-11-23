@@ -975,7 +975,8 @@ st.markdown("""
 @st.cache_resource
 def get_database():
     db = DatabaseManager()
-    db.import_from_csv()
+    db.import_from_csv()  # Import Dolny Śląsk
+    db.import_wielkopolska_from_csv()  # Import Wielkopolska
     db.import_galleries_from_csv()  # Import galerii handlowych
     return db
 
