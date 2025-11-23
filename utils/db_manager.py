@@ -7,6 +7,7 @@ import sqlite3
 import pandas as pd
 import os
 import threading
+import hashlib
 from typing import List, Dict, Optional, Tuple
 from datetime import datetime
 import re
@@ -105,6 +106,18 @@ class DatabaseManager:
                         description TEXT,
                         opening_hours TEXT,
                         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                    )
+                ''')
+
+                # Tabela użytkowników
+                cursor.execute('''
+                    CREATE TABLE IF NOT EXISTS users (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        username TEXT UNIQUE NOT NULL,
+                        password_hash TEXT NOT NULL,
+                        display_name TEXT,
+                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                        last_login TIMESTAMP
                     )
                 ''')
 
@@ -973,3 +986,85 @@ class DatabaseManager:
                 return False
             finally:
                 conn.close()
+
+    # ============================================
+    # METODY DLA UŻYTKOWNIKÓW
+    # ============================================
+
+    def _hash_password(self, password: str) -> str:
+        """Hashuje hasło używając SHA-256 z solą"""
+        salt = "NaszaMapaPrzygod2025"  # Stała sól dla prostoty
+        return hashlib.sha256(f"{salt}{password}".encode()).hexdigest()
+
+    def create_user(self, username: str, password: str, display_name: str = None) -> bool:
+        """Tworzy nowego użytkownika"""
+        with self._lock:
+            conn = self._get_connection()
+            try:
+                cursor = conn.cursor()
+                password_hash = self._hash_password(password)
+                cursor.execute('''
+                    INSERT INTO users (username, password_hash, display_name)
+                    VALUES (?, ?, ?)
+                ''', (username.lower(), password_hash, display_name or username))
+                conn.commit()
+                return True
+            except sqlite3.IntegrityError:
+                # Użytkownik już istnieje
+                return False
+            except Exception as e:
+                print(f"Błąd tworzenia użytkownika: {e}")
+                conn.rollback()
+                return False
+            finally:
+                conn.close()
+
+    def verify_user(self, username: str, password: str) -> Optional[Dict]:
+        """Weryfikuje dane logowania i zwraca dane użytkownika"""
+        with self._lock:
+            conn = self._get_connection()
+            try:
+                cursor = conn.cursor()
+                password_hash = self._hash_password(password)
+                cursor.execute('''
+                    SELECT id, username, display_name FROM users
+                    WHERE username = ? AND password_hash = ?
+                ''', (username.lower(), password_hash))
+                row = cursor.fetchone()
+                if row:
+                    # Aktualizuj last_login
+                    cursor.execute('''
+                        UPDATE users SET last_login = CURRENT_TIMESTAMP WHERE id = ?
+                    ''', (row['id'],))
+                    conn.commit()
+                    return {
+                        'id': row['id'],
+                        'username': row['username'],
+                        'display_name': row['display_name']
+                    }
+                return None
+            except Exception as e:
+                print(f"Błąd weryfikacji użytkownika: {e}")
+                return None
+            finally:
+                conn.close()
+
+    def get_user_count(self) -> int:
+        """Zwraca liczbę użytkowników w bazie"""
+        with self._lock:
+            conn = self._get_connection()
+            try:
+                cursor = conn.cursor()
+                cursor.execute("SELECT COUNT(*) FROM users")
+                return cursor.fetchone()[0]
+            except Exception:
+                return 0
+            finally:
+                conn.close()
+
+    def init_default_users(self):
+        """Inicjalizuje domyślnych użytkowników jeśli baza jest pusta"""
+        if self.get_user_count() == 0:
+            self.create_user("mateusz", "mateusz123", "Mateusz")
+            self.create_user("elena", "elena123", "Elena")
+            print("Utworzono domyślnych użytkowników: Mateusz, Elena")

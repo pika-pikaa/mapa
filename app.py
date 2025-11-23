@@ -997,6 +997,9 @@ def get_database():
     if hasattr(db, 'import_lodzkie_from_csv'):
         db.import_lodzkie_from_csv()  # Import Łódzkie
     db.import_galleries_from_csv()  # Import galerii handlowych
+    # Inicjalizacja użytkowników
+    if hasattr(db, 'init_default_users'):
+        db.init_default_users()
     return db
 
 db = get_database()
@@ -1008,6 +1011,10 @@ if 'refresh_trigger' not in st.session_state:
     st.session_state.refresh_trigger = 0
 if 'trip_proposals' not in st.session_state:
     st.session_state.trip_proposals = []
+if 'logged_in' not in st.session_state:
+    st.session_state.logged_in = False
+if 'user' not in st.session_state:
+    st.session_state.user = None
 
 def trigger_refresh():
     st.session_state.refresh_trigger += 1
@@ -1514,14 +1521,91 @@ def create_map(places: List[Dict], show_home: bool = True, show_route: bool = Fa
     return m
 
 # ============================================
-# NAGŁÓWEK - MINIMALISTYCZNY
+# FUNKCJE LOGOWANIA
 # ============================================
-st.markdown("""
-<div class="app-header">
-    <h1 class="app-title">Nasza Mapa Przygód</h1>
-    <p class="app-subtitle">Odkrywaj i planuj wycieczki po Polsce</p>
-</div>
-""", unsafe_allow_html=True)
+def login(username: str, password: str) -> bool:
+    """Próba logowania użytkownika"""
+    user = db.verify_user(username, password)
+    if user:
+        st.session_state.logged_in = True
+        st.session_state.user = user
+        return True
+    return False
+
+def logout():
+    """Wylogowanie użytkownika"""
+    st.session_state.logged_in = False
+    st.session_state.user = None
+
+# ============================================
+# EKRAN LOGOWANIA
+# ============================================
+if not st.session_state.logged_in:
+    st.markdown("""
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 2rem;
+            background: #f8fafc;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .login-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+        .login-subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.markdown('<p class="login-title">Nasza Mapa Przygod</p>', unsafe_allow_html=True)
+        st.markdown('<p class="login-subtitle">Zaloguj sie, aby kontynuowac</p>', unsafe_allow_html=True)
+
+        with st.form("login_form"):
+            username = st.text_input("Nazwa uzytkownika", placeholder="np. mateusz")
+            password = st.text_input("Haslo", type="password", placeholder="Wprowadz haslo")
+            submit = st.form_submit_button("Zaloguj", use_container_width=True, type="primary")
+
+            if submit:
+                if username and password:
+                    if login(username, password):
+                        st.success(f"Witaj, {st.session_state.user['display_name']}!")
+                        st.rerun()
+                    else:
+                        st.error("Nieprawidlowa nazwa uzytkownika lub haslo")
+                else:
+                    st.warning("Wprowadz nazwe uzytkownika i haslo")
+
+        st.caption("Uzytkownicy: mateusz / elena")
+    st.stop()
+
+# ============================================
+# NAGŁÓWEK - MINIMALISTYCZNY + INFO O UŻYTKOWNIKU
+# ============================================
+header_col1, header_col2 = st.columns([4, 1])
+with header_col1:
+    st.markdown("""
+    <div class="app-header">
+        <h1 class="app-title">Nasza Mapa Przygód</h1>
+        <p class="app-subtitle">Odkrywaj i planuj wycieczki po Polsce</p>
+    </div>
+    """, unsafe_allow_html=True)
+with header_col2:
+    if st.session_state.user:
+        st.markdown(f"**{st.session_state.user['display_name']}**")
+        if st.button("Wyloguj", use_container_width=True):
+            logout()
+            st.rerun()
 
 # ============================================
 # STATYSTYKI - LINIA
@@ -2059,4 +2143,4 @@ with tab4:
 # FOOTER
 # ============================================
 st.markdown("---")
-st.caption("Nasza Mapa Przygód · Wersja 4.0 · Punkt startowy: Jelenia Góra")
+st.caption("Nasza Mapa Przygód · Wersja 4.1 · Punkt startowy: Jelenia Góra")
