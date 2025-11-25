@@ -113,6 +113,61 @@ db = get_database()
 
 def trigger_refresh():
     st.session_state.refresh_trigger += 1
+    # Wyczyść cache przy refresh
+    get_cached_places.clear()
+    get_cached_statistics.clear()
+    get_cached_trips.clear()
+    get_cached_notes_stats.clear()
+
+
+# ============================================
+# FUNKCJE CACHE'UJĄCE (OPTYMALIZACJA)
+# ============================================
+@st.cache_data(ttl=60)  # Cache na 1 minutę
+def get_cached_places(_db, categories, vibes, hide_visited, _trigger):
+    """Cache'owana wersja get_places_by_filters"""
+    return _db.get_places_by_filters(
+        categories=categories if categories else None,
+        vibes=vibes if vibes else None,
+        hide_visited=hide_visited
+    )
+
+@st.cache_data(ttl=60)
+def get_cached_statistics(_db, _trigger):
+    """Cache'owana wersja get_statistics"""
+    return _db.get_statistics()
+
+@st.cache_data(ttl=60)
+def get_cached_trips(_db, _trigger):
+    """Cache'owana wersja get_all_trips"""
+    return _db.get_all_trips()
+
+@st.cache_data(ttl=60)
+def get_cached_notes_stats(_db, _trigger):
+    """Cache'owana wersja get_all_notes_stats"""
+    if hasattr(_db, 'get_all_notes_stats'):
+        return _db.get_all_notes_stats()
+    return {}
+
+@st.cache_data(ttl=300)  # Cache na 5 minut
+def get_cached_categories(_db):
+    """Cache'owana wersja get_categories"""
+    return _db.get_categories()
+
+@st.cache_data(ttl=300)
+def get_cached_vibes(_db):
+    """Cache'owana wersja get_vibes"""
+    return _db.get_vibes()
+
+@st.cache_data(ttl=300)
+def get_cached_all_places(_db, _trigger):
+    """Cache'owana wersja get_all_places"""
+    return _db.get_all_places()
+
+@st.cache_data(ttl=300)
+def get_cached_galleries(_db):
+    """Cache'owana wersja get_all_galleries"""
+    return _db.get_all_galleries()
 
 # ============================================
 # FUNKCJE LOGOWANIA
@@ -217,7 +272,7 @@ with header_col2:
 # ============================================
 # STATYSTYKI - LINIA
 # ============================================
-stats = db.get_statistics()
+stats = get_cached_statistics(db, st.session_state.refresh_trigger)
 
 st.markdown(f"""
 <div class="stats-row">
@@ -252,8 +307,8 @@ with tab1:
     with st.sidebar:
         st.markdown('<p class="sidebar-title">Filtry</p>', unsafe_allow_html=True)
 
-        categories = db.get_categories()
-        vibes = db.get_vibes()
+        categories = get_cached_categories(db)
+        vibes = get_cached_vibes(db)
 
         selected_categories = st.multiselect(
             "Kategorie",
@@ -290,18 +345,20 @@ with tab1:
             </div>
             """, unsafe_allow_html=True)
 
-    _ = st.session_state.refresh_trigger
-    places = db.get_places_by_filters(
-        categories=selected_categories if selected_categories else None,
-        vibes=selected_vibes if selected_vibes else None,
-        hide_visited=hide_visited
+    # Używamy cache'owanych zapytań dla wydajności
+    places = get_cached_places(
+        db,
+        tuple(selected_categories) if selected_categories else None,
+        tuple(selected_vibes) if selected_vibes else None,
+        hide_visited,
+        st.session_state.refresh_trigger
     )
 
     st.markdown(f'<p class="section-title">Mapa ({len(places)} miejsc)</p>', unsafe_allow_html=True)
 
     # Mapa - pełna szerokość na górze
     if places:
-        all_galleries = db.get_all_galleries()
+        all_galleries = get_cached_galleries(db)
         m = create_map(places, show_home=True, galleries=all_galleries)
         st_folium(m, height=500, use_container_width=True, key="main_map")
     else:
@@ -320,11 +377,22 @@ with tab1:
     # Lista w 4 kolumnach
     cols = st.columns(4)
 
+    # Pobierz statystyki notatek (cache'owane)
+    all_notes_stats = get_cached_notes_stats(db, st.session_state.refresh_trigger)
+
     for i, place in enumerate(filtered_places):
         dist = haversine_distance(HOME_LOCATION['latitude'], HOME_LOCATION['longitude'],
                                  place['latitude'], place['longitude'])
 
-        expander_label = f"{place['name']} {'(odwiedzone)' if place['is_visited'] else ''}"
+        # Pobierz stats z cache lub domyślne
+        place_stats = all_notes_stats.get(place['id'], {'count': 0, 'avg_rating': None})
+        notes_count = place_stats['count']
+        avg_rating = place_stats['avg_rating']
+
+        # Label z oceną jeśli jest
+        rating_badge = f" ★{avg_rating}" if avg_rating else ""
+        visited_badge = " ✓" if place['is_visited'] else ""
+        expander_label = f"{place['name']}{visited_badge}{rating_badge}"
 
         # Rozłożenie na 4 kolumny
         with cols[i % 4]:
@@ -332,11 +400,6 @@ with tab1:
                 st.markdown(f"**{place['category']}** · {place['location']} · {dist:.1f} km")
                 st.markdown(place['description'])
                 st.caption(f"Czas: {place['time_needed']} | {place['season_hours']}")
-
-                # Pogoda w danym miejscu
-                place_weather = get_weather(place['latitude'], place['longitude'])
-                if place_weather:
-                    st.caption(f"Pogoda: {place_weather['temp']}°C, {place_weather['description']}")
 
                 if not place['is_visited']:
                     if st.button("Oznacz jako odwiedzone", key=f"v_{place['id']}", use_container_width=True):
@@ -351,31 +414,27 @@ with tab1:
                         trigger_refresh()
                         st.rerun()
 
-                # Sekcja notatek
-                st.markdown("---")
-                notes_count = db.get_notes_count_for_place(place['id']) if hasattr(db, 'get_notes_count_for_place') else 0
-                avg_rating = db.get_average_rating_for_place(place['id']) if hasattr(db, 'get_average_rating_for_place') else None
-
-                rating_text = f" | Ocena: {'★' * int(avg_rating)} ({avg_rating})" if avg_rating else ""
-                st.caption(f"Notatki: {notes_count}{rating_text}")
-
-                # Pokaż notatki
+                # Sekcja notatek (uproszczona)
                 if notes_count > 0:
-                    notes = db.get_place_notes(place['id'])
-                    for note in notes[:3]:  # Pokaż max 3 najnowsze
-                        rating_stars = "★" * note['rating'] if note['rating'] else ""
-                        author = f" - {note['author']}" if note['author'] else ""
-                        st.markdown(f"**{rating_stars}**{author}")
-                        st.caption(note['note_text'][:100] + ("..." if len(note['note_text']) > 100 else ""))
+                    st.markdown("---")
+                    st.caption(f"📝 {notes_count} notatek")
+                    # Lazy load notatek - tylko na żądanie
+                    if st.button("Pokaż notatki", key=f"show_notes_{place['id']}", use_container_width=True):
+                        notes = db.get_place_notes(place['id'])
+                        for note in notes[:3]:
+                            rating_stars = "★" * note['rating'] if note['rating'] else ""
+                            author = f" - {note['author']}" if note['author'] else ""
+                            st.markdown(f"**{rating_stars}**{author}")
+                            st.caption(note['note_text'][:100] + ("..." if len(note['note_text']) > 100 else ""))
 
                 # Formularz dodawania notatki (tylko dla odwiedzonych)
                 if place['is_visited']:
-                    with st.popover("Dodaj notatkę"):
+                    with st.popover("➕ Notatka"):
                         new_note = st.text_area("Twoja notatka", key=f"note_text_{place['id']}", height=80)
                         note_rating = st.slider("Ocena", 1, 5, 4, key=f"note_rating_{place['id']}")
                         note_date = st.date_input("Data wizyty", key=f"note_date_{place['id']}")
 
-                        if st.button("Zapisz notatkę", key=f"save_note_{place['id']}"):
+                        if st.button("Zapisz", key=f"save_note_{place['id']}"):
                             if new_note.strip():
                                 user_id = st.session_state.user.get('id') if st.session_state.user else None
                                 if hasattr(db, 'add_place_note'):
@@ -419,7 +478,7 @@ with tab2:
         # Kategorie na pełną szerokość
         pref_categories = st.multiselect(
             "Preferowane kategorie",
-            options=db.get_categories(),
+            options=get_cached_categories(db),
             placeholder="Wszystkie kategorie"
         )
 
@@ -504,7 +563,7 @@ with tab2:
             st.caption("Galeria zostanie dopasowana do trasy (min. dodatkowy dystans)")
 
         if st.button("Wygeneruj wycieczki", use_container_width=True, type="primary"):
-            all_places = db.get_all_places()
+            all_places = get_cached_all_places(db, st.session_state.refresh_trigger)
 
             # Filtruj według województwa
             if selected_region == "Dolny Śląsk":
@@ -681,7 +740,7 @@ with tab2:
 
     else:
         st.markdown("#### Ręczne planowanie")
-        all_places = db.get_all_places()
+        all_places = get_cached_all_places(db, st.session_state.refresh_trigger)
         place_options = {f"{p['name']} ({p['location']})": p['id'] for p in all_places}
 
         with st.form("manual_trip"):
@@ -723,8 +782,7 @@ with tab2:
 with tab3:
     st.markdown('<p class="section-title">Nasze plany</p>', unsafe_allow_html=True)
 
-    _ = st.session_state.refresh_trigger
-    trips = db.get_all_trips()
+    trips = get_cached_trips(db, st.session_state.refresh_trigger)
 
     if trips:
         active = [t for t in trips if not t['is_completed']]

@@ -1254,3 +1254,35 @@ class DatabaseManager:
                 return None
             finally:
                 conn.close()
+
+    def get_all_notes_stats(self) -> Dict[int, Dict]:
+        """
+        Pobiera statystyki notatek dla WSZYSTKICH miejsc jednym zapytaniem.
+        Zwraca słownik: {place_id: {'count': int, 'avg_rating': float|None}}
+
+        OPTYMALIZACJA: Zamiast N zapytań (jedno per miejsce), wykonuje 1 zapytanie.
+        """
+        with self._lock:
+            conn = self._get_connection()
+            try:
+                cursor = conn.cursor()
+                cursor.execute('''
+                    SELECT place_id,
+                           COUNT(*) as count,
+                           ROUND(AVG(CASE WHEN rating IS NOT NULL THEN rating END), 1) as avg_rating
+                    FROM place_notes
+                    GROUP BY place_id
+                ''')
+
+                result = {}
+                for row in cursor.fetchall():
+                    result[row[0]] = {
+                        'count': row[1],
+                        'avg_rating': row[2]
+                    }
+                return result
+            except Exception as e:
+                print(f"Błąd pobierania statystyk notatek: {e}")
+                return {}
+            finally:
+                conn.close()
