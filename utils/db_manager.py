@@ -121,11 +121,28 @@ class DatabaseManager:
                     )
                 ''')
 
+                # Tabela notatek do miejsc
+                cursor.execute('''
+                    CREATE TABLE IF NOT EXISTS place_notes (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        place_id INTEGER NOT NULL,
+                        user_id INTEGER,
+                        note_text TEXT NOT NULL,
+                        rating INTEGER CHECK(rating >= 1 AND rating <= 5),
+                        visited_date DATE,
+                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                        FOREIGN KEY (place_id) REFERENCES places(id) ON DELETE CASCADE,
+                        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+                    )
+                ''')
+
                 # Indeksy dla wydajności
                 cursor.execute('CREATE INDEX IF NOT EXISTS idx_places_visited ON places(is_visited)')
                 cursor.execute('CREATE INDEX IF NOT EXISTS idx_places_category ON places(category)')
                 cursor.execute('CREATE INDEX IF NOT EXISTS idx_trips_completed ON trips(is_completed)')
                 cursor.execute('CREATE INDEX IF NOT EXISTS idx_galleries_type ON galleries(gallery_type)')
+                cursor.execute('CREATE INDEX IF NOT EXISTS idx_place_notes_place ON place_notes(place_id)')
 
                 conn.commit()
             except Exception as e:
@@ -1068,3 +1085,172 @@ class DatabaseManager:
             self.create_user("mateusz", "mateusz123", "Mateusz")
             self.create_user("elena", "elena123", "Elena")
             print("Utworzono domyślnych użytkowników: Mateusz, Elena")
+
+    # ============================================
+    # METODY DLA NOTATEK DO MIEJSC
+    # ============================================
+
+    def add_place_note(self, place_id: int, note_text: str, rating: int = None,
+                       visited_date: str = None, user_id: int = None) -> Optional[int]:
+        """
+        Dodaje notatkę do miejsca.
+
+        Args:
+            place_id: ID miejsca
+            note_text: Treść notatki
+            rating: Ocena (1-5), opcjonalna
+            visited_date: Data wizyty (YYYY-MM-DD), opcjonalna
+            user_id: ID użytkownika, opcjonalne
+
+        Returns:
+            ID utworzonej notatki lub None w przypadku błędu
+        """
+        with self._lock:
+            conn = self._get_connection()
+            try:
+                cursor = conn.cursor()
+                cursor.execute('''
+                    INSERT INTO place_notes (place_id, user_id, note_text, rating, visited_date)
+                    VALUES (?, ?, ?, ?, ?)
+                ''', (place_id, user_id, note_text, rating, visited_date))
+                conn.commit()
+                return cursor.lastrowid
+            except Exception as e:
+                print(f"Błąd podczas dodawania notatki: {e}")
+                return None
+            finally:
+                conn.close()
+
+    def get_place_notes(self, place_id: int) -> List[Dict]:
+        """
+        Pobiera wszystkie notatki dla danego miejsca.
+
+        Args:
+            place_id: ID miejsca
+
+        Returns:
+            Lista notatek jako słowniki
+        """
+        with self._lock:
+            conn = self._get_connection()
+            try:
+                cursor = conn.cursor()
+                cursor.execute('''
+                    SELECT pn.id, pn.place_id, pn.note_text, pn.rating, pn.visited_date,
+                           pn.created_at, pn.updated_at, u.display_name as author
+                    FROM place_notes pn
+                    LEFT JOIN users u ON pn.user_id = u.id
+                    WHERE pn.place_id = ?
+                    ORDER BY pn.created_at DESC
+                ''', (place_id,))
+
+                columns = ['id', 'place_id', 'note_text', 'rating', 'visited_date',
+                          'created_at', 'updated_at', 'author']
+                return [dict(zip(columns, row)) for row in cursor.fetchall()]
+            except Exception as e:
+                print(f"Błąd podczas pobierania notatek: {e}")
+                return []
+            finally:
+                conn.close()
+
+    def update_place_note(self, note_id: int, note_text: str = None,
+                          rating: int = None, visited_date: str = None) -> bool:
+        """
+        Aktualizuje notatkę.
+
+        Args:
+            note_id: ID notatki
+            note_text: Nowa treść (opcjonalna)
+            rating: Nowa ocena (opcjonalna)
+            visited_date: Nowa data wizyty (opcjonalna)
+
+        Returns:
+            True jeśli sukces, False w przeciwnym razie
+        """
+        with self._lock:
+            conn = self._get_connection()
+            try:
+                cursor = conn.cursor()
+
+                # Buduj dynamiczne zapytanie
+                updates = ["updated_at = CURRENT_TIMESTAMP"]
+                params = []
+
+                if note_text is not None:
+                    updates.append("note_text = ?")
+                    params.append(note_text)
+                if rating is not None:
+                    updates.append("rating = ?")
+                    params.append(rating)
+                if visited_date is not None:
+                    updates.append("visited_date = ?")
+                    params.append(visited_date)
+
+                params.append(note_id)
+
+                cursor.execute(f'''
+                    UPDATE place_notes
+                    SET {", ".join(updates)}
+                    WHERE id = ?
+                ''', params)
+
+                conn.commit()
+                return cursor.rowcount > 0
+            except Exception as e:
+                print(f"Błąd podczas aktualizacji notatki: {e}")
+                return False
+            finally:
+                conn.close()
+
+    def delete_place_note(self, note_id: int) -> bool:
+        """
+        Usuwa notatkę.
+
+        Args:
+            note_id: ID notatki
+
+        Returns:
+            True jeśli sukces, False w przeciwnym razie
+        """
+        with self._lock:
+            conn = self._get_connection()
+            try:
+                cursor = conn.cursor()
+                cursor.execute('DELETE FROM place_notes WHERE id = ?', (note_id,))
+                conn.commit()
+                return cursor.rowcount > 0
+            except Exception as e:
+                print(f"Błąd podczas usuwania notatki: {e}")
+                return False
+            finally:
+                conn.close()
+
+    def get_notes_count_for_place(self, place_id: int) -> int:
+        """Zwraca liczbę notatek dla danego miejsca"""
+        with self._lock:
+            conn = self._get_connection()
+            try:
+                cursor = conn.cursor()
+                cursor.execute('SELECT COUNT(*) FROM place_notes WHERE place_id = ?', (place_id,))
+                return cursor.fetchone()[0]
+            except Exception:
+                return 0
+            finally:
+                conn.close()
+
+    def get_average_rating_for_place(self, place_id: int) -> Optional[float]:
+        """Zwraca średnią ocenę dla miejsca (tylko z notatek z oceną)"""
+        with self._lock:
+            conn = self._get_connection()
+            try:
+                cursor = conn.cursor()
+                cursor.execute('''
+                    SELECT AVG(rating) FROM place_notes
+                    WHERE place_id = ? AND rating IS NOT NULL
+                ''', (place_id,))
+                result = cursor.fetchone()[0]
+                return round(result, 1) if result else None
+            except Exception:
+                return None
+            finally:
+                conn.close()
