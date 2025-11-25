@@ -2,3 +2,7 @@ streamlit==1.40.2
 pandas==2.2.3
 folium==0.18.0
 streamlit-folium==0.23.1
+reportlab>=4.0.0
+qrcode>=7.4.0
+Pillow>=10.0.0
+requests>=2.31.0
